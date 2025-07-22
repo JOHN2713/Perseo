@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PERSEO | Sistema Contable</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Swiper CSS (después de Tailwind) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- tsParticles CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <!-- tsParticles Config -->
+    <!-- Estilos del Slider -->
+    <style>
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 450px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .swiper-pagination {
+            text-align: center;
+            color: white;
+        }
+
+        @keyframes wave {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- ✅ NAV -->
+    <header class="py-2 px-6 flex justify-between items-center bg-black text-white shadow-sm">
+        <div class="text-2xl font-bold text-white">PERSEO</div>
+        <nav class="space-x-6 hidden md:flex">
+            <a href="#beneficios" class="text-white hover:text-blue-600">Inicio</a>
+            <a href="#como-funciona" class="text-white hover:text-blue-600">Nuestros Planes</a>
+            <a href="#contacto" class="text-white hover:text-blue-600">Opción Contadores</a>
+            <a href="#planes" class="text-white hover:text-blue-600">Atención al Cliente</a>
+            <a href="#testimonios" class="text-white hover:text-blue-600">Blog</a>
+            <a href="#contacto" class="text-white hover:text-blue-600">Simulador</a>
+        </nav>
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-black-700 text-sm">Probar Gratis</a>
+    </header>
+    <!-- ✅ SLIDER COVERFLOW -->
+    <section class="bg-[#072fcb] text-black py-12">
+        <h2 class="text-2xl font-bold text-center mb-7">Funcionalidades</h2>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/1.jpg" alt="Slide 1" /></div>
+                <div class="swiper-slide"><img src="img/2.jpg" alt="Slide 2" /></div>
+                <div class="swiper-slide"><img src="img/3.jpg" alt="Slide 3" /></div>
+                <div class="swiper-slide"><img src="img/4.jpg" alt="Slide 4" /></div>
+                <div class="swiper-slide"><img src="img/5.jpg" alt="Slide 5" /></div>
+                <div class="swiper-slide"><img src="img/6.jpg" alt="Slide 6" /></div>
+                <div class="swiper-slide"><img src="img/7.jpg" alt="Slide 7" /></div>
+                <div class="swiper-slide"><img src="img/8.jpg" alt="Slide 8" /></div>
+            </div>
+            <div class="swiper-pagination mt-3"></div>
+        </div>
+    </section>
+
+    <!-- ✅ PLANES PERSEO (Monocromático con logo arriba) -->
+    <section id="planes" class="py-1 px-6 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">Planes PERSEO</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- PLAN WEB -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm border border-gray-200 text-left">
+                    <div class="flex justify-center mb-4">
+                        <img src="img/perseoweb.png" alt="Plan Web Logo" class="w-146 h-30" />
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Desde</h3>
+                    <p class="text-5xl font-bold text-gray-1200 text-center">$17.99</p>
+                    <p class="text-sm text-gray-500 text-center mb-4">más IVA / mensual</p>
+                    <p class="text-sm text-gray-600 mb-6 text-center">
+                        Sistema contable con servidor en la nube. Accede desde cualquier lugar del mundo.
+                    </p>
+                    <div class="text-center">
+                        <a href="#"
+                            class="inline-block border border-gray-800 text-gray-800 px-4 py-2 rounded hover:bg-gray-100 transition">
+                            Más Información
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PLAN PC PRIME -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm border border-gray-200 text-left">
+                    <div class="flex justify-center mb-4">
+                        <img src="img/perseoprime.png" alt="Plan PC Prime Logo" class="w-286 h-35" />
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Desde</h3>
+                    <p class="text-5xl font-bold text-gray-900 text-center">$969.99</p>
+                    <p class="text-sm text-gray-500 text-center mb-4">más IVA / anual</p>
+                    <p class="text-sm text-gray-600 mb-6 text-center">
+                        Sistema contable multiempresa con servidor en la nube.
+                    </p>
+                    <div class="text-center">
+                        <a href="#"
+                            class="inline-block border border-gray-800 text-gray-800 px-4 py-2 rounded hover:bg-gray-100 transition">
+                            Más Información
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PLAN PC -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm border border-gray-200 text-left">
+                    <div class="flex justify-center mb-4">
+                        <img src="img/perseopc.png" alt="Plan PC Logo" class="w-86 h-30" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1 text-center">Desde</h3>
+                    <p class="text-5xl font-bold text-gray-900 text-center">$32.99</p>
+                    <p class="text-sm text-gray-500 text-center mb-4">más IVA / mensual</p>
+                    <p class="text-sm text-gray-600 mb-6 text-center">
+                        Sistema contable multiempresa con servidor físico. Crea y maneja empresas de forma ilimitada en
+                        un solo sistema.
+                    </p>
+                    <div class="text-center">
+                        <a href="#"
+                            class="inline-block border border-gray-800 text-gray-800 px-4 py-2 rounded hover:bg-gray-100 transition">
+                            Más Información
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ HERO -->
+    <section class="text-center py-20 px-6 bg-white-50">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            El sistema contable que impulsa tu negocio
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            Controla tus finanzas, ventas y facturación electrónica con PERSEO.
+        </p>
+        <div class="flex justify-center gap-4">
+            <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Probar Gratis por
+                15 días</a>
+            <a href="#"
+                class="border border-blue-600 text-blue-600 px-6 py-3 rounded hover:bg-blue-50 transition">Solicita una
+                Demo</a>
+        </div>
+    </section>
+
+    <!-- ✅ ESTADÍSTICAS + GRÁFICO DE VENTAS -->
+    <section id="estadisticas" class="relative py-20 px-6 bg-white overflow-hidden">
+        <div
+            class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-10 bg-white rounded-3xl shadow-lg p-10">
+
+            <!-- Usuarios -->
+            <div class="text-center">
+                <div id="users" class="text-5xl font-extrabold text-gray-800">+0</div>
+                <div class="text-lg font-semibold text-gray-500 mt-2">Usuarios</div>
+            </div>
+
+            <!-- Empresas -->
+            <div class="text-center">
+                <div id="companies" class="text-5xl font-extrabold text-gray-800">+0</div>
+                <div class="text-lg font-semibold text-gray-500 mt-2">Empresas</div>
+            </div>
+
+            <!-- Gráfico de ventas -->
+            <div class="w-full md:w-[420px]">
+                <h3 class="text-4xl font-bold text-center mb-4 text-gray-800">Ventas ↗</h3>
+                <div
+                    class="relative h-44 w-full rounded-xl overflow-hidden bg-gradient-to-t from-yellow-400 via-transparent to-transparent">
+                    <div class="absolute bottom-0 w-[250%] h-[150%] bg-blue-500/50 animate-wave bg-opacity-50"
+                        style="clip-path: polygon(0% 80%, 10% 60%, 20% 70%, 30% 55%, 40% 75%, 50% 60%, 60% 78%, 70% 62%, 80% 85%, 90% 70%, 100% 78%, 100% 100%, 0% 100%)">
+                    </div>
+                    <div class="absolute bottom-0 w-[250%] h-[150%] bg-blue-500/30 animate-wave delay-[2s]"
+                        style="clip-path: polygon(0% 80%, 10% 60%, 20% 70%, 30% 55%, 40% 75%, 50% 60%, 60% 78%, 70% 62%, 80% 85%, 90% 70%, 100% 78%, 100% 100%, 0% 100%)">
+                    </div>
+
+                    <!-- Etiquetas -->
+                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-10 top-8">$12K</div>
+                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-28 top-12">$14K</div>
+                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-48 top-6">$16K</div>
+                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-72 top-10">$18K</div>
+                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-[19rem] top-4">$20K
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ TESTIMONIOS DE CLIENTES (RESPONSIVE FIXED) -->
+    <section class="relative py-20 px-6 bg-gray-100 overflow-hidden">
+        <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Testimonios de Clientes</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
+
+            <!-- Logos Grid -->
+            <div class="grid grid-cols-3 sm:grid-cols-4 gap-4 bg-gray-200 p-4 rounded-xl place-items-center">
+                <img src="img/logo-colorados.png" alt="Colorados"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('colorados')">
+                <img src="img/Huawei-Logo.png" alt="Huawei"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('huawei')">
+                <img src="img/LOGO-MOBICELL.png" alt="Mobicell"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('mobicell')">
+                <img src="img/asogan.jpg" alt="Asogan"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('asogan')">
+                <img src="img/head.png" alt="Head"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('head')">
+                <img src="img/gca.webp" alt="GCA"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('gca')">
+                <img src="img/moran.jpg" alt="Moran"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('moran')">
+                <img src="img/ldnio.png" alt="LDNIO"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('ldnio')">
+                <img src="img/alextech.png" alt="Alextech"
+                    class="bg-white p-2 rounded-lg w-24 h-24 object-contain cursor-pointer hover:scale-105 transition"
+                    onclick="cambiarTestimonio('alextech')">
+            </div>
+
+            <!-- Testimonios Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="testimonios">
+                <div class="bg-white p-6 rounded-2xl shadow flex items-center gap-4" id="card1">
+                    <img src="img/icono1.png" class="w-10 h-10" alt="">
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-800">Título 1</h4>
+                        <p class="text-sm text-gray-600">Texto del testimonio aquí.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow flex items-center gap-4" id="card2">
+                    <img src="img/icono2.png" class="w-10 h-10" alt="">
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-800">Título 2</h4>
+                        <p class="text-sm text-gray-600">Texto del testimonio aquí.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow flex items-center gap-4" id="card3">
+                    <img src="img/icono3.png" class="w-10 h-10" alt="">
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-800">Título 3</h4>
+                        <p class="text-sm text-gray-600">Texto del testimonio aquí.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow flex items-center gap-4" id="card4">
+                    <img src="img/icono4.png" class="w-10 h-10" alt="">
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-800">Título 4</h4>
+                        <p class="text-sm text-gray-600">Texto del testimonio aquí.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const testimonios = {
+                colorados: [
+                    ["Crecimiento empresarial", "Gracias a Perseo Web aumentamos nuestra eficiencia y clientes.", "img/career.png"],
+                    ["Procesos claros", "Los procesos contables se volvieron más ágiles.", "img/workflow.png"],
+                    ["Soporte confiable", "Siempre que lo necesitamos, el soporte está presente.", "img/call-center.png"],
+                    ["Control total", "Ahora tenemos visibilidad de todo desde la nube.", "img/barcode.png"]
+                ],
+                huawei: [
+                    ["Escalabilidad", "Perseo nos acompañó en nuestra expansión regional.", "img/escalabilidad.png"],
+                    ["Automatización", "Reducimos tareas manuales gracias al sistema.", "img/automation.png"],
+                    ["Integración fácil", "Se integró muy bien con nuestras herramientas.", "img/integration.png"],
+                    ["Gestión eficiente", "Manejamos múltiples sedes desde una sola cuenta.", "img/efficiency.png"]
+                ],
+                // Agrega el resto...
+            };
+
+            function cambiarTestimonio(cliente) {
+                const datos = testimonios[cliente];
+                if (!datos) return;
+
+                for (let i = 0; i < datos.length; i++) {
+                    const card = document.getElementById("card" + (i + 1));
+                    const icon = card.querySelector("img");
+                    const title = card.querySelector("h4");
+                    const text = card.querySelector("p");
+
+                    title.textContent = datos[i][0];
+                    text.textContent = datos[i][1];
+                    icon.src = datos[i][2];
+                }
+            }
+
+            cambiarTestimonio('colorados');
+        </script>
+    </section>
+
+
+
+    <!-- ✅ FOOTER PERSEO -->
+    <footer class="bg-black text-white pt-10 pb-6 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
+
+            <!-- Columna 1: Logo + redes -->
+            <div>
+                <img src="img/logo-perseo-blanco.png" alt="PERSEO Logo" class="h-14 mb-3 mx-auto md:mx-0">
+                <p class="text-sm text-gray-100 mb-3">Sistema contable en la nube<br>y servidor físico para tu empresa
+                </p>
+                <div class="flex justify-center md:justify-start gap-3 mt-2">
+                    <a href="#"><img src="img/icon-facebook.svg" alt="Facebook" class="h-5 w-5"></a>
+                    <a href="#"><img src="img/icon-instagram.svg" alt="Instagram" class="h-5 w-5"></a>
+                    <a href="#"><img src="img/icon-twitter.svg" alt="Twitter" class="h-5 w-5"></a>
+                    <a href="#"><img src="img/icon-youtube.svg" alt="YouTube" class="h-5 w-5"></a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Descarga app y links -->
+            <div>
+                <p class="font-semibold mb-2">Descarga Nuestra Aplicación Móvil</p>
+                <div class="flex justify-center gap-2 mb-4">
+                    <a href="#"><img src="img/google-play.svg" alt="Google Play" class="h-9"></a>
+                    <a href="#"><img src="img/app-store.svg" alt="App Store" class="h-9"></a>
+                </div>
+                <div class="flex justify-center flex-wrap gap-4 text-sm text-white/90">
+                    <a href="#" class="hover:underline">Nuestros Planes</a>
+                    <a href="#" class="hover:underline">Blog</a>
+                    <a href="#" class="hover:underline">Atención al Cliente</a>
+                    <a href="#" class="hover:underline">Simulador</a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Astronauta + CTA -->
+            <div class="relative">
+                <img src="img/persy-perseo.png" alt="Astronauta" class="h-20 mx-auto md:mx-0">
+                <div class="mt-6 text-center md:text-right">
+                    <a href="#contacto"
+                        class="inline-block bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold shadow hover:bg-yellow-300 transition">
+                        Solicitar Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Línea inferior -->
+        <div class="text-center text-xs text-white/80 mt-8">
+            <p>Copyright © 2024 PerseoSoft. Todos los Derechos Reservados.</p>
+            <a href="#" class="underline hover:text-white">Política de Privacidad</a>
+        </div>
+    </footer>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            initialSlide: 3,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            coverflowEffect: {
+                rotate: 30,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+    <!-- ✅ BOTÓN FLOTANTE DE WHATSAPP CON ASTRONAUTA -->
+    <div id="whatsapp-float" class="fixed bottom-5 right-5 z-50">
+        <!-- Botón -->
+        <button onclick="toggleChat()" class="focus:outline-none">
+            <img src="img/PERSY-WHATTSAPP.png" alt="WhatsApp Astronauta"
+                class="w-20 h-20 drop-shadow-xl hover:scale-105 transition">
+        </button>
+
+        <!-- Burbuja de Chat -->
+        <div id="chat-bubble" class="hidden mt-3 w-72 bg-white rounded-xl shadow-xl p-4 text-sm text-gray-700">
+            <p class="mb-3 font-semibold">¿Necesitas ayuda?</p>
+            <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
+            <a href="https://wa.me/593999999999" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Iniciar Chat en WhatsApp
+            </a>
+        </div>
+    </div>
+    <script>
+        function toggleChat() {
+            const bubble = document.getElementById('chat-bubble');
+            bubble.classList.toggle('hidden');
+        }
+    </script>
+    <script>
+        // Animar contadores
+        function animateCounter(id, endValue, duration = 2000) {
+            const el = document.getElementById(id);
+            let start = 0;
+            const increment = endValue / (duration / 50);
+            const interval = setInterval(() => {
+                start += increment;
+                if (start >= endValue) {
+                    start = endValue;
+                    clearInterval(interval);
+                }
+                el.textContent = `+${start.toFixed(1)} K`;
+            }, 50);
+        }
+
+        animateCounter("users", 1.2);
+        animateCounter("companies", 2.2);
+
+        // Mostrar burbuja de WhatsApp cada 5 segundos
+        const bubble = document.getElementById('wa-bubble');
+
+        setInterval(() => {
+            bubble.classList.remove('hidden');
+            bubble.classList.add('opacity-100');
+            setTimeout(() => {
+                bubble.classList.add('hidden');
+                bubble.classList.remove('opacity-100');
+            }, 4000);
+        }, 7000);
+    </script>
+
+</body>
+
+</html>

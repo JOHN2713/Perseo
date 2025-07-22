@@ -16,7 +16,7 @@
     </script>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-white text-gray-800 font-sans">
     <!-- Header fijo -->
     <!-- ✅ NAV -->
     <header id="main-header" class="sticky top-0 z-50 bg-black text-white shadow-md transition-all duration-300">
@@ -44,8 +44,8 @@
 
         <!-- MENÚ MOBILE (oculto por defecto) -->
         <div id="mobile-menu" class="md:hidden hidden flex-col px-6 pb-4 space-y-3 bg-black">
-            <a href="#beneficios" class="block hover:text-blue-400">🏠 Inicio</a>
-            <a href="#como-funciona" class="block hover:text-blue-400">📊 Nuestros Planes</a>
+            <a href="index.html" class="block hover:text-blue-400">🏠 Inicio</a>
+            <a href="planes.html" class="block hover:text-blue-400">📊 Nuestros Planes</a>
             <a href="#contacto" class="block hover:text-blue-400">🧾 Opción Contadores</a>
             <a href="#planes" class="block hover:text-blue-400">👨🏻‍💻 Atención al Cliente</a>
             <a href="#testimonios" class="block hover:text-blue-400">📄 Blog</a>
@@ -141,6 +141,67 @@
             });
         });
     </script>
+    <!-- ✅ BOTÓN FLOTANTE DE WHATSAPP CON ASTRONAUTA -->
+    <div id="whatsapp-float" class="fixed bottom-5 right-5 z-50">
+        <!-- Botón -->
+        <button onclick="toggleChat()" class="focus:outline-none">
+            <img src="img/PERSY-WHATTSAPP.png" alt="WhatsApp Astronauta"
+                class="w-20 h-20 drop-shadow-xl hover:scale-105 transition">
+        </button>
+
+        <!-- Burbuja de Chat -->
+        <div id="chat-bubble" class="hidden mt-3 w-72 bg-white rounded-xl shadow-xl p-4 text-sm text-gray-700">
+            <p class="mb-3 font-semibold">¿Necesitas ayuda?</p>
+            <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Iniciar Chat en WhatsApp
+            </a>
+        </div>
+    </div>
+    <script>
+        function toggleChat() {
+            const bubble = document.getElementById('chat-bubble');
+            bubble.classList.toggle('hidden');
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("main-header");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            window.addEventListener("scroll", () => {
+                const scrolled = window.scrollY > 50;
+
+                // HEADER
+                header.classList.toggle("backdrop-blur-lg", scrolled);
+                header.classList.toggle("bg-white", scrolled);
+                header.classList.toggle("text-black", scrolled);
+                header.classList.toggle("border-b", scrolled);
+                header.classList.toggle("border-white/10", scrolled);
+
+                header.classList.toggle("bg-black", !scrolled);
+                header.classList.toggle("text-white", !scrolled);
+
+                // MOBILE MENU
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle("bg-white", scrolled);
+                    mobileMenu.classList.toggle("text-black", scrolled);
+                    mobileMenu.classList.toggle("bg-black", !scrolled);
+                    mobileMenu.classList.toggle("text-white", !scrolled);
+                }
+            });
+
+            // Menú hamburguesa toggle
+            const toggleBtn = document.getElementById("menu-toggle");
+            if (toggleBtn && mobileMenu) {
+                toggleBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>

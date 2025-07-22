@@ -85,8 +85,8 @@
 
         <!-- MENÚ MOBILE (oculto por defecto) -->
         <div id="mobile-menu" class="md:hidden hidden flex-col px-6 pb-4 space-y-3 bg-black">
-            <a href="#beneficios" class="block hover:text-blue-400">🏠 Inicio</a>
-            <a href="#como-funciona" class="block hover:text-blue-400">📊 Nuestros Planes</a>
+            <a href="index.html" class="block hover:text-blue-400">🏠 Inicio</a>
+            <a href="planes.html" class="block hover:text-blue-400">📊 Nuestros Planes</a>
             <a href="#contacto" class="block hover:text-blue-400">🧾 Opción Contadores</a>
             <a href="#planes" class="block hover:text-blue-400">👨🏻‍💻 Atención al Cliente</a>
             <a href="#testimonios" class="block hover:text-blue-400">📄 Blog</a>
@@ -548,23 +548,34 @@
         });
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const header = document.getElementById("main-header");
+  document.addEventListener("DOMContentLoaded", function () {
+    const header = document.getElementById("main-header");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-            window.addEventListener("scroll", () => {
-                const scrolled = window.scrollY > 50;
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY > 50;
 
-                header.classList.toggle("backdrop-blur-lg", scrolled);
-                header.classList.toggle("bg-black/70", scrolled);
-                header.classList.toggle("text-black", scrolled);
-                header.classList.toggle("border-b", scrolled);
-                header.classList.toggle("border-white/10", scrolled);
+      // HEADER PRINCIPAL
+      header.classList.toggle("backdrop-blur-lg", scrolled);
+      header.classList.toggle("bg-white", scrolled);
+      header.classList.toggle("text-black", scrolled);
+      header.classList.toggle("border-b", scrolled);
+      header.classList.toggle("border-white/50", scrolled);
 
-                header.classList.toggle("bg-black", !scrolled);
-                header.classList.toggle("text-white", !scrolled);
-            });
-        });
-    </script>
+      header.classList.toggle("bg-black", !scrolled);
+      header.classList.toggle("text-white", !scrolled);
+
+      // MENÚ MÓVIL
+      if (mobileMenu) {
+        mobileMenu.classList.toggle("bg-white", scrolled);
+        mobileMenu.classList.toggle("text-black", scrolled);
+        mobileMenu.classList.toggle("bg-black", !scrolled);
+        mobileMenu.classList.toggle("text-white", !scrolled);
+      }
+    });
+  });
+</script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const cohete = document.getElementById("cohete");

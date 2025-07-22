@@ -51,6 +51,11 @@
                 transform: translateX(-50%);
             }
         }
+
+        #cohete {
+            position: fixed;
+            transform: translate(-50%, -50%);
+        }
     </style>
 
 </head>
@@ -58,7 +63,7 @@
 <body class="bg-white text-gray-800 font-sans">
 
     <!-- ✅ NAV -->
-    <header class="bg-black text-white shadow-sm">
+    <header id="main-header" class="sticky top-0 z-50 bg-black text-white shadow-md transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold">PERSEO</div>
 
@@ -83,19 +88,19 @@
 
         <!-- MENÚ MOBILE (oculto por defecto) -->
         <div id="mobile-menu" class="md:hidden hidden flex-col px-6 pb-4 space-y-3 bg-black">
-            <a href="#beneficios" class="block hover:text-blue-400">Inicio</a>
-            <a href="#como-funciona" class="block hover:text-blue-400">Nuestros Planes</a>
-            <a href="#contacto" class="block hover:text-blue-400">Opción Contadores</a>
-            <a href="#planes" class="block hover:text-blue-400">Atención al Cliente</a>
-            <a href="#testimonios" class="block hover:text-blue-400">Blog</a>
-            <a href="#contacto" class="block hover:text-blue-400">Simulador</a>
+            <a href="#beneficios" class="block hover:text-blue-400">🏠 Inicio</a>
+            <a href="#como-funciona" class="block hover:text-blue-400">📊 Nuestros Planes</a>
+            <a href="#contacto" class="block hover:text-blue-400">🧾 Opción Contadores</a>
+            <a href="#planes" class="block hover:text-blue-400">👨🏻‍💻 Atención al Cliente</a>
+            <a href="#testimonios" class="block hover:text-blue-400">📄 Blog</a>
+            <a href="#contacto" class="block hover:text-blue-400">🎯 Simulador</a>
             <a href="#" class="block bg-blue-600 text-center py-2 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
         </div>
     </header>
 
     <!-- ✅ SLIDER COVERFLOW -->
     <section class="bg-[#072fcb] text-black py-12">
-        <h2 class="text-2xl font-bold text-center mb-7">Funcionalidades</h2>
+        <h2 class="text-2xl font-bold text-center mb-7">Nuevas Funcionalidades</h2>
 
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -238,7 +243,7 @@
     </section>
 
     <!-- ✅ TESTIMONIOS DE CLIENTES (RESPONSIVE FIXED) -->
-    <section class="relative py-20 px-6 bg-gray-100 overflow-hidden">
+    <section id="testimonios" class="relative py-20 px-6 bg-gray-100 overflow-hidden">
         <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Testimonios de Clientes</h2>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
@@ -275,7 +280,7 @@
             </div>
 
             <!-- Testimonios Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="testimonios">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="testimonios_cards">
                 <div class="bg-white p-6 rounded-2xl shadow flex items-center gap-4" id="card1">
                     <img src="img/icono1.png" class="w-10 h-10" alt="">
                     <div>
@@ -482,13 +487,77 @@
         }, 7000);
     </script>
     <script>
-        const toggleBtn = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleBtn = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        toggleBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            toggleBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("main-header");
+
+            window.addEventListener("scroll", () => {
+                const scrolled = window.scrollY > 50;
+
+                header.classList.toggle("backdrop-blur-lg", scrolled);
+                header.classList.toggle("bg-black/70", scrolled);
+                header.classList.toggle("text-black", scrolled);
+                header.classList.toggle("border-b", scrolled);
+                header.classList.toggle("border-white/10", scrolled);
+
+                header.classList.toggle("bg-black", !scrolled);
+                header.classList.toggle("text-white", !scrolled);
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cohete = document.getElementById("cohete");
+            const zona = document.getElementById("testimonios");
+
+            let lastX = 0;
+            let lastY = 0;
+
+            zona.addEventListener("mousemove", (e) => {
+                cohete.classList.remove("hidden");
+
+                const x = e.clientX;
+                const y = e.clientY;
+
+                // Movimiento
+                cohete.style.left = `${x}px`;
+                cohete.style.top = `${y}px`;
+
+                // Calcular ángulo respecto al último punto
+                const deltaX = x - lastX;
+                const deltaY = y - lastY;
+                const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+                // Aplicar rotación
+                cohete.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+
+                // Guardar últimas posiciones
+                lastX = x;
+                lastY = y;
+            });
+
+            zona.addEventListener("mouseleave", () => {
+                cohete.classList.add("hidden");
+            });
+        });
+    </script>
+
+
+    <img src="img/cohete.svg" id="cohete" alt="Cohete"
+        class="hidden w-12 h-12 fixed pointer-events-none z-50 transition-transform duration-100 ease-linear"
+        style="left: 0px; top: 0px;" />
+
+
+
 </body>
 
 </html>

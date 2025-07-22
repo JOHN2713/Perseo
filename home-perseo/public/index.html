@@ -8,9 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Swiper CSS (después de Tailwind) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- tsParticles CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-    <!-- tsParticles Config -->
     <!-- Estilos del Slider -->
     <style>
         .swiper {
@@ -76,8 +73,8 @@
 
             <!-- MENÚ DESKTOP -->
             <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#beneficios" class="hover:text-blue-400">Inicio</a>
-                <a href="#como-funciona" class="hover:text-blue-400">Nuestros Planes</a>
+                <a href="index.html" class="hover:text-blue-400">Inicio</a>
+                <a href="planes.html" class="hover:text-yellow-400 transition">Nuestros Planes</a>
                 <a href="#contacto" class="hover:text-blue-400">Opción Contadores</a>
                 <a href="#planes" class="hover:text-blue-400">Atención al Cliente</a>
                 <a href="#testimonios" class="hover:text-blue-400">Blog</a>
@@ -202,45 +199,92 @@
     </section>
 
     <!-- ✅ ESTADÍSTICAS + GRÁFICO DE VENTAS -->
-    <section id="estadisticas" class="relative py-20 px-6 bg-white overflow-hidden">
-        <div
-            class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-10 bg-white rounded-3xl shadow-lg p-10">
+    <!-- Sección con 3 contadores circulares animados -->
+    <section class="bg-gray-900 text-white py-20">
+        <h2 class="text-4xl font-bold text-center mb-12">Métricas Clave</h2>
+        <div class="flex flex-wrap justify-center gap-10">
 
-            <!-- Usuarios -->
-            <div class="text-center">
-                <div id="users" class="text-5xl font-extrabold text-gray-800">+0</div>
-                <div class="text-lg font-semibold text-gray-500 mt-2">Usuarios</div>
-            </div>
-
-            <!-- Empresas -->
-            <div class="text-center">
-                <div id="companies" class="text-5xl font-extrabold text-gray-800">+0</div>
-                <div class="text-lg font-semibold text-gray-500 mt-2">Empresas</div>
-            </div>
-
-            <!-- Gráfico de ventas -->
-            <div class="w-full md:w-[420px]">
-                <h3 class="text-4xl font-bold text-center mb-4 text-gray-800">Ventas ↗</h3>
-                <div
-                    class="relative h-44 w-full rounded-xl overflow-hidden bg-gradient-to-t from-yellow-400 via-transparent to-transparent">
-                    <div class="absolute bottom-0 w-[250%] h-[150%] bg-blue-500/50 animate-wave bg-opacity-50"
-                        style="clip-path: polygon(0% 80%, 10% 60%, 20% 70%, 30% 55%, 40% 75%, 50% 60%, 60% 78%, 70% 62%, 80% 85%, 90% 70%, 100% 78%, 100% 100%, 0% 100%)">
-                    </div>
-                    <div class="absolute bottom-0 w-[250%] h-[150%] bg-blue-500/30 animate-wave delay-[2s]"
-                        style="clip-path: polygon(0% 80%, 10% 60%, 20% 70%, 30% 55%, 40% 75%, 50% 60%, 60% 78%, 70% 62%, 80% 85%, 90% 70%, 100% 78%, 100% 100%, 0% 100%)">
-                    </div>
-
-                    <!-- Etiquetas -->
-                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-10 top-8">$12K</div>
-                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-28 top-12">$14K</div>
-                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-48 top-6">$16K</div>
-                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-72 top-10">$18K</div>
-                    <div class="absolute text-xs font-bold bg-white px-2 py-1 rounded shadow left-[19rem] top-4">$20K
+            <!-- Contador 1 -->
+            <div class="relative w-40 h-40">
+                <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" stroke="#2d3748" stroke-width="10" fill="none" />
+                    <circle cx="50" cy="50" r="45" stroke="#3b82f6" stroke-width="10" fill="none"
+                        stroke-dasharray="282.6" stroke-dashoffset="282.6"
+                        style="transition: stroke-dashoffset 2s ease-out;" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center text-center">
+                    <div>
+                        <div id="counter1" class="text-2xl font-bold">0</div>
+                        <div class="text-sm">Usuarios</div>
                     </div>
                 </div>
             </div>
+
+            <!-- Contador 2 -->
+            <div class="relative w-40 h-40">
+                <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" stroke="#2d3748" stroke-width="10" fill="none" />
+                    <circle cx="50" cy="50" r="45" stroke="#2563eb" stroke-width="10" fill="none"
+                        stroke-dasharray="282.6" stroke-dashoffset="282.6"
+                        style="transition: stroke-dashoffset 2.4s ease-out;" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center text-center">
+                    <div>
+                        <div id="counter2" class="text-2xl font-bold">0</div>
+                        <div class="text-sm">Empresas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contador 3 -->
+            <div class="relative w-40 h-40">
+                <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" stroke="#2d3748" stroke-width="10" fill="none" />
+                    <circle cx="50" cy="50" r="45" stroke="#1e40af" stroke-width="10" fill="none"
+                        stroke-dasharray="282.6" stroke-dashoffset="282.6"
+                        style="transition: stroke-dashoffset 1.8s ease-out;" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center text-center">
+                    <div>
+                        <div id="counter3" class="text-2xl font-bold">0</div>
+                        <div class="text-sm">Clientes Recurrentes</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
+
+    <script>
+        function animateCounter(id, end, duration) {
+            const el = document.getElementById(id);
+            let start = 0;
+            const step = end / (duration / 16);
+            const interval = setInterval(() => {
+                start += step;
+                if (start >= end) {
+                    start = end;
+                    clearInterval(interval);
+                }
+                el.textContent = `${start.toFixed(1)}K`;
+            }, 16);
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('svg circle:nth-child(2)').forEach((circle, index) => {
+                const values = [1.8, 2.2, 1.5];
+                const offset = 282.6 - (282.6 * values[index] / 2.5); // 2.5K es el 100%
+                setTimeout(() => {
+                    circle.style.strokeDashoffset = offset;
+                }, 500);
+            });
+
+            animateCounter("counter1", 1.2, 2000);
+            animateCounter("counter2", 2.2, 2400);
+            animateCounter("counter3", 0.5, 1800);
+        });
+    </script>
+
 
     <!-- ✅ TESTIMONIOS DE CLIENTES (RESPONSIVE FIXED) -->
     <section id="testimonios" class="relative py-20 px-6 bg-gray-100 overflow-hidden">
@@ -353,7 +397,8 @@
 
     <!-- ✅ FOOTER PERSEO -->
     <footer class="bg-black text-white pt-10 pb-6 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
+        <div class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center md:text-left">
+
 
             <!-- Columna 1: Logo + redes -->
             <div>
@@ -361,19 +406,27 @@
                 <p class="text-sm text-gray-100 mb-3">Sistema contable en la nube<br>y servidor físico para tu empresa
                 </p>
                 <div class="flex justify-center md:justify-start gap-3 mt-2">
-                    <a href="#"><img src="img/icon-facebook.svg" alt="Facebook" class="h-5 w-5"></a>
-                    <a href="#"><img src="img/icon-instagram.svg" alt="Instagram" class="h-5 w-5"></a>
-                    <a href="#"><img src="img/icon-twitter.svg" alt="Twitter" class="h-5 w-5"></a>
-                    <a href="#"><img src="img/icon-youtube.svg" alt="YouTube" class="h-5 w-5"></a>
+                    <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg"
+                            alt="Facebook" class="h-5 w-5"></a>
+                    <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg"
+                            alt="Instagram" class="h-5 w-5"></a>
+                    <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter"
+                            class="h-5 w-5"></a>
+                    <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"
+                            class="h-5 w-5"></a>
                 </div>
             </div>
 
             <!-- Columna 2: Descarga app y links -->
-            <div>
+            <div class="flex flex-col items-center md:items-start">
                 <p class="font-semibold mb-2">Descarga Nuestra Aplicación Móvil</p>
                 <div class="flex justify-center gap-2 mb-4">
-                    <a href="#"><img src="img/google-play.svg" alt="Google Play" class="h-9"></a>
-                    <a href="#"><img src="img/app-store.svg" alt="App Store" class="h-9"></a>
+                    <a href="#"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-9"></a>
+                    <a href="#"><img
+                            src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-9"></a>
                 </div>
                 <div class="flex justify-center flex-wrap gap-4 text-sm text-white/90">
                     <a href="#" class="hover:underline">Nuestros Planes</a>
@@ -384,14 +437,12 @@
             </div>
 
             <!-- Columna 3: Astronauta + CTA -->
-            <div class="relative">
-                <img src="img/persy-perseo.png" alt="Astronauta" class="h-20 mx-auto md:mx-0">
-                <div class="mt-6 text-center md:text-right">
-                    <a href="#contacto"
-                        class="inline-block bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold shadow hover:bg-yellow-300 transition">
-                        Solicitar Demo
-                    </a>
-                </div>
+            <div class="relative flex flex-col items-center md:items-end">
+                <img src="img/persy-perseo.png" alt="Astronauta" class="h-20">
+                <a href="#contacto"
+                    class="mt-4 bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold shadow hover:bg-yellow-300 transition">
+                    Solicitar Demo
+                </a>
             </div>
         </div>
 

@@ -269,202 +269,178 @@
             </div>
         </div>
     </section>
-            <script>
-                function toggleDetails(id) {
-                    const el = document.getElementById(id);
-                    el.classList.toggle('hidden');
-                }
-            </script>
-            <script>
-                function togglePrice(input) {
-                    const card = input.closest('.shadow-md');
-                    const priceEl = card.querySelector('.price');
-                    const periodEl = card.querySelector('.period');
+    <script>
+        function toggleDetails(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('hidden');
+        }
+    </script>
+    <script>
+        function togglePrice(input) {
+            const card = input.closest('.shadow-md');
+            const priceEl = card.querySelector('.price');
+            const periodEl = card.querySelector('.period');
 
-                    const monthly = parseFloat(priceEl.dataset.monthly).toFixed(2);
-                    const annual = parseFloat(priceEl.dataset.annual).toFixed(2);
+            const monthly = parseFloat(priceEl.dataset.monthly).toFixed(2);
+            const annual = parseFloat(priceEl.dataset.annual).toFixed(2);
 
-                    if (input.checked) {
-                        priceEl.textContent = `$${annual}`;
-                        periodEl.textContent = 'Anual';
-                    } else {
-                        priceEl.textContent = `$${monthly}`;
-                        periodEl.textContent = 'Mensual';
-                    }
-                }
-            </script>
+            if (input.checked) {
+                priceEl.textContent = `$${annual}`;
+                periodEl.textContent = 'Anual';
+            } else {
+                priceEl.textContent = `$${monthly}`;
+                periodEl.textContent = 'Mensual';
+            }
+        }
+    </script>
 
-            <!-- Nueva Sección Comparativa de Módulos -->
-            <section id="comparativa-modulos" class="max-w-7xl mx-auto px-4 py-12">
-                <h2 class="text-3xl font-bold text-center mb-8">Comparativa de Módulos por Plan</h2>
+    <!-- Nueva Sección Comparativa de Módulos -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Ventas</h3>
 
-                <div class="bg-white shadow-md rounded-xl overflow-hidden">
-                    <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Ventas</h3>
-
-                    <div class="w-full">
-                        <table class="w-full table-auto text-sm text-center">
-                            <thead class="bg-blue-700 text-white">
-                                <tr>
-                                    <th class="px-4 py-2 text-left">Detalle</th>
-                                    <th class="px-4 py-2">Facturación</th>
-                                    <th class="px-4 py-2">Servicios</th>
-                                    <th class="px-4 py-2">Comercial</th>
-                                    <th class="px-4 py-2">Lite</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b">
-                                    <td class="px-4 py-2 text-left">Facturación</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="px-4 py-2 text-left">Proformas y Pedidos</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                </tr>
-                            </tbody>
-                            <tbody id="ventas-extendido" class="hidden">
-                                <tr class="border-b">
-                                    <td class="px-4 py-2 text-left">Entregas por Facturar</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-gray-500">-</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="px-4 py-2 text-left">Entregas Parciales de Mercadería Facturada</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-gray-500">-</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                    <td class="text-blue-700 font-bold">SI</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="text-center py-4">
-                        <button
-                            onclick="document.getElementById('ventas-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
-                            class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Planes PC y Prime ocultos hasta clic -->
-            <section id="planes-pc" class="planes-section hidden max-w-7xl mx-auto py-10 px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-500">Planes PC</h2>
-            </section>
-
-            <section id="planes-pc-prime" class="planes-section hidden max-w-7xl mx-auto py-10 px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-500">Planes PC Prime</h2>
-            </section>
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const header = document.getElementById("main-header");
-
-                    window.addEventListener("scroll", () => {
-                        const scrolled = window.scrollY > 50;
-
-                        header.classList.toggle("backdrop-blur-lg", scrolled);
-                        header.classList.toggle("bg-black/70", scrolled);
-                        header.classList.toggle("text-black", scrolled);
-                        header.classList.toggle("border-b", scrolled);
-                        header.classList.toggle("border-white/10", scrolled);
-
-                        header.classList.toggle("bg-black", !scrolled);
-                        header.classList.toggle("text-white", !scrolled);
-                    });
-                });
-            </script>
-            <!-- ✅ BOTÓN FLOTANTE DE WHATSAPP CON ASTRONAUTA -->
-            <div id="whatsapp-float" class="fixed bottom-4 right-1 z-50 flex flex-col items-end space-y-1">
-
-                <!-- Burbuja de Chat (ahora arriba) -->
-                <div id="chat-bubble" class="hidden w-72 bg-white rounded-xl shadow-xl p-4 text-sm text-gray-700">
-                    <p class="mb-3 font-semibold">¿Necesitas ayuda?</p>
-                    <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
-                    <a href="https://wa.me/593999774777" target="_blank"
-                        class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
-                        Iniciar Chat en WhatsApp
-                    </a>
-                </div>
-
-                <!-- Botón con el astronauta -->
-                <button onclick="toggleChat()" class="focus:outline-none m-0 p-0">
-                    <img src="img/PERSY.gif" alt="WhatsApp Astronauta" style="width: 250px; height: auto;"
-                        class="drop-shadow-xl hover:scale-110 transition-transform duration-300" />
-                </button>
+            <!-- Contenedor responsivo con scroll horizontal -->
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left whitespace-nowrap">Detalle</th>
+                            <th class="px-4 py-2 whitespace-nowrap">Facturación</th>
+                            <th class="px-4 py-2 whitespace-nowrap">Servicios</th>
+                            <th class="px-4 py-2 whitespace-nowrap">Comercial</th>
+                            <th class="px-4 py-2 whitespace-nowrap">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Facturación</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Proformas y Pedidos</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="ventas-extendido" class="hidden">
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Entregas por Facturar</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Entregas Parciales de Mercadería Facturada</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <script>
-                function toggleChat() {
-                    const bubble = document.getElementById('chat-bubble');
-                    bubble.classList.toggle('hidden');
+            <!-- Botón para expandir -->
+            <div class="text-center py-4">
+                <button
+                    onclick="document.getElementById('ventas-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                    class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Planes PC y Prime ocultos hasta clic -->
+    <section id="planes-pc" class="planes-section hidden max-w-7xl mx-auto py-10 px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-500">Planes PC</h2>
+    </section>
+
+    <section id="planes-pc-prime" class="planes-section hidden max-w-7xl mx-auto py-10 px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-500">Planes PC Prime</h2>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("main-header");
+
+            window.addEventListener("scroll", () => {
+                const scrolled = window.scrollY > 50;
+
+                header.classList.toggle("backdrop-blur-lg", scrolled);
+                header.classList.toggle("bg-black/70", scrolled);
+                header.classList.toggle("text-black", scrolled);
+                header.classList.toggle("border-b", scrolled);
+                header.classList.toggle("border-white/10", scrolled);
+
+                header.classList.toggle("bg-black", !scrolled);
+                header.classList.toggle("text-white", !scrolled);
+            });
+        });
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("main-header");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            window.addEventListener("scroll", () => {
+                const scrolled = window.scrollY > 50;
+
+                // HEADER
+                header.classList.toggle("backdrop-blur-lg", scrolled);
+                header.classList.toggle("bg-white", scrolled);
+                header.classList.toggle("text-black", scrolled);
+                header.classList.toggle("border-b", scrolled);
+                header.classList.toggle("border-white/10", scrolled);
+
+                header.classList.toggle("bg-black", !scrolled);
+                header.classList.toggle("text-white", !scrolled);
+
+                // MOBILE MENU
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle("bg-white", scrolled);
+                    mobileMenu.classList.toggle("text-black", scrolled);
+                    mobileMenu.classList.toggle("bg-black", !scrolled);
+                    mobileMenu.classList.toggle("text-white", !scrolled);
                 }
-            </script>
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const header = document.getElementById("main-header");
-                    const mobileMenu = document.getElementById("mobile-menu");
+            });
 
-                    window.addEventListener("scroll", () => {
-                        const scrolled = window.scrollY > 50;
-
-                        // HEADER
-                        header.classList.toggle("backdrop-blur-lg", scrolled);
-                        header.classList.toggle("bg-white", scrolled);
-                        header.classList.toggle("text-black", scrolled);
-                        header.classList.toggle("border-b", scrolled);
-                        header.classList.toggle("border-white/10", scrolled);
-
-                        header.classList.toggle("bg-black", !scrolled);
-                        header.classList.toggle("text-white", !scrolled);
-
-                        // MOBILE MENU
-                        if (mobileMenu) {
-                            mobileMenu.classList.toggle("bg-white", scrolled);
-                            mobileMenu.classList.toggle("text-black", scrolled);
-                            mobileMenu.classList.toggle("bg-black", !scrolled);
-                            mobileMenu.classList.toggle("text-white", !scrolled);
-                        }
-                    });
-
-                    // Menú hamburguesa toggle
-                    const toggleBtn = document.getElementById("menu-toggle");
-                    if (toggleBtn && mobileMenu) {
-                        toggleBtn.addEventListener("click", () => {
-                            mobileMenu.classList.toggle("hidden");
-                        });
-                    }
+            // Menú hamburguesa toggle
+            const toggleBtn = document.getElementById("menu-toggle");
+            if (toggleBtn && mobileMenu) {
+                toggleBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
                 });
-            </script>
-            <script>
-                function cambiarPrecio(planId, esAnual) {
-                    const precios = {
-                        facturacion: { mensual: 17.99, anual: 179.99 },
-                        servicios: { mensual: 29.99, anual: 299.99 },
-                        comercial: { mensual: 41.99, anual: 419.99 }
-                    };
+            }
+        });
+    </script>
+    <script>
+        function cambiarPrecio(planId, esAnual) {
+            const precios = {
+                facturacion: { mensual: 17.99, anual: 179.99 },
+                servicios: { mensual: 29.99, anual: 299.99 },
+                comercial: { mensual: 41.99, anual: 419.99 }
+            };
 
-                    const precioEl = document.getElementById(`precio-${planId}`);
-                    const periodoEl = document.getElementById(`periodo-${planId}`);
+            const precioEl = document.getElementById(`precio-${planId}`);
+            const periodoEl = document.getElementById(`periodo-${planId}`);
 
-                    if (esAnual) {
-                        precioEl.textContent = `$${precios[planId].anual}`;
-                        periodoEl.textContent = 'Más IVA / Anual';
-                    } else {
-                        precioEl.textContent = `$${precios[planId].mensual}`;
-                        periodoEl.textContent = 'Más IVA / Mensual';
-                    }
-                }
-            </script>
+            if (esAnual) {
+                precioEl.textContent = `$${precios[planId].anual}`;
+                periodoEl.textContent = 'Más IVA / Anual';
+            } else {
+                precioEl.textContent = `$${precios[planId].mensual}`;
+                periodoEl.textContent = 'Más IVA / Mensual';
+            }
+        }
+    </script>
 
 </body>
 

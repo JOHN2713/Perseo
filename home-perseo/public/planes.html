@@ -354,7 +354,156 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="bg-white shadow-md rounded-xl overflow-hidden my-6">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Compras</h3>
 
+            <div class="overflow-x-auto">
+                <table class="w-full table-auto text-sm text-center min-w-[640px]">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Registro de compras</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Cuentas por pagar</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="compras-extendido" class="hidden">
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Órdenes de compra</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Control de proveedores</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center py-4">
+                <button
+                    onclick="document.getElementById('compras-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                    class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="bg-white shadow-md rounded-xl overflow-hidden my-6">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Inventario</h3>
+
+            <div class="overflow-x-auto">
+                <table class="w-full table-auto text-sm text-center min-w-[640px]">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Fichas de Productos, Precios, Fotos</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Creación de ítems de servicios</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Ingresos y Salidas de Inventarios</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Manejo Bodegas y Sucursales</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="inventario-extendido" class="hidden">
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Transferencias entre Bodegas</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Análisis de Rotación de Inventarios y Compras</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Kardex de Movimientos de Productos</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Lotes de Caducidad</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">—</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Kits y Plantillas</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">—</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center py-4">
+                <button
+                    onclick="document.getElementById('inventario-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                    class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Planes PC y Prime ocultos hasta clic -->
@@ -384,7 +533,7 @@
             });
         });
     </script>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const header = document.getElementById("main-header");

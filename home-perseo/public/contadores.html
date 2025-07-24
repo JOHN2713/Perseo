@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opción Contadores</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+</style>
+
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- ✅ HEADER -->
+    <header id="main-header" class="sticky top-0 z-50 bg-black text-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">PERSEO</div>
+
+            <!-- Ícono hamburguesa -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Menú Desktop -->
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="hover:text-blue-400">Inicio</a>
+                <a href="planes.html" class="hover:text-yellow-400">Nuestros Planes</a>
+                <a href="contadores.html" class="hover:text-blue-400">Opción Contadores</a>
+                <a href="atencion-cliente.html" class="hover:text-blue-400">Atención al Cliente</a>
+                <a href="blog.html" class="hover:text-blue-400">Blog</a>
+                <a href="simulador.html" class="hover:text-blue-400">Simulador</a>
+                <a href="#" class="bg-blue-600 px-3 py-1 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
+            </nav>
+        </div>
+
+        <!-- Menú Mobile -->
+        <div id="mobile-menu" class="md:hidden hidden flex-col px-6 pb-4 space-y-3 bg-black text-white">
+            <a href="index.html" class="block hover:text-blue-400">🏠 Inicio</a>
+            <a href="planes.html" class="block hover:text-blue-400">📊 Nuestros Planes</a>
+            <a href="#contacto" class="block hover:text-blue-400">🧾 Opción Contadores</a>
+            <a href="#planes" class="block hover:text-blue-400">👨🏻‍💻 Atención al Cliente</a>
+            <a href="#testimonios" class="block hover:text-blue-400">📄 Blog</a>
+            <a href="#contacto" class="block hover:text-blue-400">🎯 Simulador</a>
+            <a href="#" class="block bg-blue-600 text-center py-2 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
+        </div>
+    </header>
+
+    <!-- ✅ CONTENIDO -->
+    <main class="pt-6 px-4">
+
+    </main>
+
+    <!-- ✅ FOOTER PERSEO -->
+    <footer class="bg-black text-white pt-10 pb-6 px-6">
+        <div class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center md:text-left">
+
+
+            <!-- Columna 1: Logo + redes -->
+            <div>
+                <img src="img/logo-perseo-blanco.png" alt="PERSEO Logo" class="h-14 mb-3 mx-auto md:mx-0">
+                <p class="text-sm text-gray-100 mb-3">Sistema contable en la nube<br>y servidor físico para tu empresa
+                </p>
+                <div class="flex justify-center md:justify-start gap-3 mt-2">
+                    <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg"
+                            alt="Facebook" class="h-5 w-5"></a>
+                    <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg"
+                            alt="Instagram" class="h-5 w-5"></a>
+                    <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter"
+                            class="h-5 w-5"></a>
+                    <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"
+                            class="h-5 w-5"></a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Descarga app y links -->
+            <div class="flex flex-col items-center md:items-start">
+                <p class="font-semibold mb-2">Descarga Nuestra Aplicación Móvil</p>
+                <div class="flex justify-center gap-2 mb-4">
+                    <a href="#"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="h-9"></a>
+                    <a href="#"><img
+                            src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="h-9"></a>
+                </div>
+                <div class="flex justify-center flex-wrap gap-4 text-sm text-white/90">
+                    <a href="#" class="hover:underline">Nuestros Planes</a>
+                    <a href="#" class="hover:underline">Blog</a>
+                    <a href="#" class="hover:underline">Atención al Cliente</a>
+                    <a href="#" class="hover:underline">Simulador</a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Astronauta + CTA -->
+            <div class="relative flex flex-col items-center md:items-end">
+                <img src="img/persy-perseo.png" alt="Astronauta" class="h-20">
+                <a href="#contacto"
+                    class="mt-4 bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold shadow hover:bg-yellow-300 transition">
+                    Solicitar Demo
+                </a>
+            </div>
+        </div>
+
+        <!-- Línea inferior -->
+        <div class="text-center text-xs text-white/80 mt-8">
+            <p>Copyright © 2024 PerseoSoft. Todos los Derechos Reservados.</p>
+            <a href="#" class="underline hover:text-white">Política de Privacidad</a>
+        </div>
+    </footer>
+
+    <!-- Script navbar scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleBtn = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            toggleBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("main-header");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            window.addEventListener("scroll", () => {
+                const scrolled = window.scrollY > 50;
+
+                // HEADER PRINCIPAL
+                header.classList.toggle("backdrop-blur-lg", scrolled);
+                header.classList.toggle("bg-white", scrolled);
+                header.classList.toggle("text-black", scrolled);
+                header.classList.toggle("border-b", scrolled);
+                header.classList.toggle("border-white/50", scrolled);
+
+                header.classList.toggle("bg-black", !scrolled);
+                header.classList.toggle("text-white", !scrolled);
+
+                // MENÚ MÓVIL
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle("bg-white", scrolled);
+                    mobileMenu.classList.toggle("text-black", scrolled);
+                    mobileMenu.classList.toggle("bg-black", !scrolled);
+                    mobileMenu.classList.toggle("text-white", !scrolled);
+                }
+            });
+        });
+    </script>
+    <!-- ✅ BOTÓN FLOTANTE DE WHATSAPP CON ASTRONAUTA -->
+    <div id="whatsapp-float" class="fixed bottom-4 right-1 z-50 flex flex-col items-end space-y-1">
+
+        <!-- Burbuja de Chat (ahora arriba) -->
+        <div id="chat-bubble" class="hidden w-72 bg-white rounded-xl shadow-xl p-4 text-sm text-gray-700">
+            <p class="mb-3 font-semibold">¿Necesitas ayuda?</p>
+            <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Iniciar Chat en WhatsApp
+            </a>
+        </div>
+
+        <!-- Botón con el astronauta -->
+        <button onclick="toggleChat()" class="focus:outline-none m-0 p-0">
+            <img src="img/PERSY.gif" alt="WhatsApp Astronauta" style="width: 250px; height: auto;"
+                class="drop-shadow-xl hover:scale-110 transition-transform duration-300" />
+        </button>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const bubble = document.getElementById('chat-bubble');
+            bubble.classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>

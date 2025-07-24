@@ -75,8 +75,8 @@
             <nav class="hidden md:flex space-x-6 items-center">
                 <a href="index.html" class="hover:text-blue-400">Inicio</a>
                 <a href="planes.html" class="hover:text-yellow-400 transition">Nuestros Planes</a>
-                <a href="#contacto" class="hover:text-blue-400">Opción Contadores</a>
-                <a href="#planes" class="hover:text-blue-400">Atención al Cliente</a>
+                <a href="contadores.html" class="hover:text-blue-400">Opción Contadores</a>
+                <a href="atencion-cliente.html" class="hover:text-blue-400">Atención al Cliente</a>
                 <a href="#testimonios" class="hover:text-blue-400">Blog</a>
                 <a href="#contacto" class="hover:text-blue-400">Simulador</a>
                 <a href="#" class="bg-blue-600 px-3 py-1 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
@@ -483,23 +483,25 @@
         });
     </script>
     <!-- ✅ BOTÓN FLOTANTE DE WHATSAPP CON ASTRONAUTA -->
-    <div id="whatsapp-float" class="fixed bottom-5 right-5 z-50">
-        <!-- Botón -->
-        <button onclick="toggleChat()" class="focus:outline-none">
-            <img src="img/PERSY-WHATTSAPP.png" alt="WhatsApp Astronauta"
-                class="w-20 h-20 drop-shadow-xl hover:scale-105 transition">
-        </button>
+    <div id="whatsapp-float" class="fixed bottom-4 right-1 z-50 flex flex-col items-end space-y-1">
 
-        <!-- Burbuja de Chat -->
-        <div id="chat-bubble" class="hidden mt-3 w-72 bg-white rounded-xl shadow-xl p-4 text-sm text-gray-700">
+        <!-- Burbuja de Chat (ahora arriba) -->
+        <div id="chat-bubble" class="hidden w-72 bg-white rounded-xl shadow-xl p-4 text-sm text-gray-700">
             <p class="mb-3 font-semibold">¿Necesitas ayuda?</p>
             <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
-            <a href="https://wa.me/593999999999" target="_blank"
+            <a href="https://wa.me/593999774777" target="_blank"
                 class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
                 Iniciar Chat en WhatsApp
             </a>
         </div>
+
+        <!-- Botón con el astronauta -->
+        <button onclick="toggleChat()" class="focus:outline-none m-0 p-0">
+            <img src="img/ANIMACION PERSI HELLO.gif" alt="WhatsApp Astronauta" style="width: 250px; height: auto;"
+                class="drop-shadow-xl hover:scale-110 transition-transform duration-300" />
+        </button>
     </div>
+
     <script>
         function toggleChat() {
             const bubble = document.getElementById('chat-bubble');
@@ -548,33 +550,33 @@
         });
     </script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const header = document.getElementById("main-header");
-    const mobileMenu = document.getElementById("mobile-menu");
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("main-header");
+            const mobileMenu = document.getElementById("mobile-menu");
 
-    window.addEventListener("scroll", () => {
-      const scrolled = window.scrollY > 50;
+            window.addEventListener("scroll", () => {
+                const scrolled = window.scrollY > 50;
 
-      // HEADER PRINCIPAL
-      header.classList.toggle("backdrop-blur-lg", scrolled);
-      header.classList.toggle("bg-white", scrolled);
-      header.classList.toggle("text-black", scrolled);
-      header.classList.toggle("border-b", scrolled);
-      header.classList.toggle("border-white/50", scrolled);
+                // HEADER PRINCIPAL
+                header.classList.toggle("backdrop-blur-lg", scrolled);
+                header.classList.toggle("bg-white", scrolled);
+                header.classList.toggle("text-black", scrolled);
+                header.classList.toggle("border-b", scrolled);
+                header.classList.toggle("border-white/50", scrolled);
 
-      header.classList.toggle("bg-black", !scrolled);
-      header.classList.toggle("text-white", !scrolled);
+                header.classList.toggle("bg-black", !scrolled);
+                header.classList.toggle("text-white", !scrolled);
 
-      // MENÚ MÓVIL
-      if (mobileMenu) {
-        mobileMenu.classList.toggle("bg-white", scrolled);
-        mobileMenu.classList.toggle("text-black", scrolled);
-        mobileMenu.classList.toggle("bg-black", !scrolled);
-        mobileMenu.classList.toggle("text-white", !scrolled);
-      }
-    });
-  });
-</script>
+                // MENÚ MÓVIL
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle("bg-white", scrolled);
+                    mobileMenu.classList.toggle("text-black", scrolled);
+                    mobileMenu.classList.toggle("bg-black", !scrolled);
+                    mobileMenu.classList.toggle("text-white", !scrolled);
+                }
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -615,7 +617,7 @@
 
 
     <img src="img/cohete.svg" id="cohete" alt="Cohete"
-        class="hidden w-12 h-12 fixed pointer-events-none z-50 transition-transform duration-100 ease-linear"
+        class="hidden w-6 h-6 fixed pointer-events-none z-50 transition-transform duration-100 ease-linear"
         style="left: 0px; top: 0px;" />
 
 

@@ -182,21 +182,61 @@
     </section>
 
     <!-- ✅ HERO -->
-    <section class="text-center py-20 px-6 bg-white-50">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            El sistema contable que impulsa tu negocio
-        </h1>
-        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Controla tus finanzas, ventas y facturación electrónica con PERSEO.
-        </p>
-        <div class="flex justify-center gap-4">
-            <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Probar Gratis por
-                15 días</a>
-            <a href="#"
-                class="border border-blue-600 text-blue-600 px-6 py-3 rounded hover:bg-blue-50 transition">Solicita una
-                Demo</a>
+    <section class="relative py-20 px-6 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('img/FONDO-SIN-OPACIDAD.webp');">
+        <!-- Capa de opacidad sobre la imagen -->
+        <div class="absolute inset-0 bg-white opacity-50"></div>
+
+        <!-- Contenido alineado a la izquierda -->
+        <div class="relative z-10 max-w-5xl mx-auto text-left">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black drop-shadow-xl">
+                El sistema contable que impulsa tu negocio
+            </h1>
+            <p class="text-lg md:text-xl text-black/90 mb-8 max-w-xl">
+                Controla tus finanzas, ventas y facturación electrónica con PERSEO.
+            </p>
+            <div class="flex gap-4 flex-wrap">
+                <button onclick="abrirModal()"
+                    class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
+                    Probar Gratis por 15 días
+                </button>
+                <a href="#"
+                    class="border border-black text-black px-6 py-3 rounded hover:bg-black hover:text-white transition">
+                    Solicita una Demo
+                </a>
+            </div>
         </div>
     </section>
+    <!-- MODAL DE REGISTRO -->
+    <div id="modal-demo" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-lg relative">
+            <!-- Botón de cierre -->
+            <button onclick="cerrarModal()"
+                class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
+
+            <!-- Contenido del modal -->
+            <h2 class="text-2xl font-bold mb-2 text-center">¡Estás a pocos pasos de tener tu software!</h2>
+            <p class="text-sm text-gray-600 text-center mb-6">Regístrate y nos contactaremos contigo</p>
+
+            <form action="https://tudominio.com/solicitar-demo" method="POST" class="space-y-4">
+                <input type="text" name="nombre" placeholder="Nombres y apellidos" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="email" name="correo" placeholder="Correo electrónico" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="text" name="empresa" placeholder="Nombre de la compañía" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="email" name="email_empresa" placeholder="Email empresarial" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="tel" name="telefono" placeholder="Teléfono" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Solicitar
+                    Demo</button>
+            </form>
+        </div>
+    </div>
+
 
     <!-- ✅ ESTADÍSTICAS + GRÁFICO DE VENTAS -->
     <!-- Sección con 3 contadores circulares animados -->
@@ -448,7 +488,7 @@
 
         <!-- Línea inferior -->
         <div class="text-center text-xs text-white/80 mt-8">
-            <p>Copyright © 2024 PerseoSoft. Todos los Derechos Reservados.</p>
+            <p>Copyright © 2025 PerseoSoft. Todos los Derechos Reservados.</p>
             <a href="#" class="underline hover:text-white">Política de Privacidad</a>
         </div>
     </footer>
@@ -491,7 +531,15 @@
             <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
             <a href="https://wa.me/593999774777" target="_blank"
                 class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
-                Iniciar Chat en WhatsApp
+                Contactar con un Asesor
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Solicitar Soporte Técnico
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Atención al Cliente
             </a>
         </div>
 
@@ -620,6 +668,15 @@
         class="hidden w-6 h-6 fixed pointer-events-none z-50 transition-transform duration-100 ease-linear"
         style="left: 0px; top: 0px;" />
 
+    <script>
+        function abrirModal() {
+            document.getElementById('modal-demo').classList.remove('hidden');
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal-demo').classList.add('hidden');
+        }
+    </script>
 
 
 </body>

@@ -122,12 +122,12 @@
             <!-- Plan Lite -->
             <div class="bg-white p-6 rounded-2xl shadow-md text-center border border-gray-200">
                 <div class="flex justify-center mb-4">
-                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
-                        <img src="icons/lite.svg" alt="Lite" class="w-6 h-6">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center">
+                        <img src="img/lite-72x72.webp" alt="Lite" class="w-12 h-12">
                     </div>
                 </div>
                 <h3 class="text-xl font-bold">Lite</h3>
-                <p class="text-blue-600 font-semibold mt-2">¡Pruébalo por 30 días!<br>¡Sin ningún valor!</p>
+                <p class="text-blue-600 font-semibold mt-2">¡Pruébalo por 15 días!<br>¡Sin ningún valor!</p>
                 <button onclick="toggleDetails('lite-details')"
                     class="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 font-semibold">Ver
                     más</button>
@@ -371,14 +371,16 @@
                     </thead>
                     <tbody>
                         <tr class="border-b">
-                            <td class="px-4 py-2 text-left">Registro de compras</td>
+                            <td class="px-4 py-2 text-left">Compras de Productos y Servicios, Liquidaciones de Compra
+                            </td>
                             <td class="text-blue-700 font-bold">SI</td>
                             <td class="text-blue-700 font-bold">SI</td>
                             <td class="text-blue-700 font-bold">SI</td>
                             <td class="text-gray-500">-</td>
                         </tr>
                         <tr class="border-b">
-                            <td class="px-4 py-2 text-left">Cuentas por pagar</td>
+                            <td class="px-4 py-2 text-left">Importación de Compras Electrónicas directo desde el SRI
+                            </td>
                             <td class="text-gray-500">-</td>
                             <td class="text-blue-700 font-bold">SI</td>
                             <td class="text-blue-700 font-bold">SI</td>
@@ -387,14 +389,14 @@
                     </tbody>
                     <tbody id="compras-extendido" class="hidden">
                         <tr class="border-b">
-                            <td class="px-4 py-2 text-left">Órdenes de compra</td>
+                            <td class="px-4 py-2 text-left">Ordenes y Recepción de compras</td>
                             <td class="text-gray-500">-</td>
                             <td class="text-gray-500">-</td>
                             <td class="text-blue-700 font-bold">SI</td>
                             <td class="text-gray-500">-</td>
                         </tr>
                         <tr class="border-b">
-                            <td class="px-4 py-2 text-left">Control de proveedores</td>
+                            <td class="px-4 py-2 text-left">Liquidación de Importaciones</td>
                             <td class="text-blue-700 font-bold">SI</td>
                             <td class="text-blue-700 font-bold">SI</td>
                             <td class="text-blue-700 font-bold">SI</td>
@@ -504,8 +506,427 @@
             </div>
         </div>
     </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Punto de Venta Online-Offline</h3>
 
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Punto de Venta Online - Offline con cierre de caja</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Facturación Avanzada Online - Offline</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="punto-de-venta-extendido" class="hidden">
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Proformas Online - Offline</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Pedidos Online - Offline</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
+            <div class="text-center py-4">
+                <button
+                    onclick="document.getElementById('punto-de-venta-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                    class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Restaurantes</h3>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Facturación Restaurante - Venta Directa</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Facturación Restaurante - con uso de Comandos - Mesas</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Cuentas por Cobrar</h3>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Fichas de Clientes</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Estado de Cuenta, Cobros</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Cuentas por Pagar</h3>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Fichas de Proveedores</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Estado de Cuenta, Pagos</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Tesorería</h3>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Transacciones Bancarias y de múltiples cajas</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Gestión Efectivo, TC, Cheques, Cheques postfechados, depósitos</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="tesoreria-extendido" class="hidden">
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Posfechados, Depósitos</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Liquidación de Tarjetas de Crédito</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Conciliación Bancaria</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center py-4">
+                <button
+                    onclick="document.getElementById('tesoreria-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                    class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Contabilidad</h3>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Contabilidad 100% integrada, Balances</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Libro Diarios y Mayores Generales</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="contabilidad-extendido" class="hidden">
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Impuestos, ATS</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Centros de Costos</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center py-4">
+                <button
+                    onclick="document.getElementById('contabilidad-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                    class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Nómina</h3>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Gestión de Talento Humano, Rubros de Nómina y Provisiones</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Control de Préstamos y Anticipos</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Impresión de Rol General y Roles Individuales, Reportes</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Activos Fijos</h3>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Gestión Activos Fijos, Grupos, Departamentos y Responsables</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Cálculo y contabilización de Depreciaciones por Activo</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden">
+            <h3 class="bg-blue-700 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Producción</h3>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-sm text-center">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Detalle</th>
+                            <th class="px-4 py-2">Facturación</th>
+                            <th class="px-4 py-2">Servicios</th>
+                            <th class="px-4 py-2">Comercial</th>
+                            <th class="px-4 py-2">Lite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Gestión de Recetas y Ordenes de Producción</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Cálculo de consumo de Materia prima, Salidas de Materia Prima</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="produccion-extendido" class="hidden">
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Cálculo de Costo Unitario de productos terminados</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Ingresos de Productos Terminados</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="px-4 py-2 text-left">Contabilización de la Producción</td>
+                            <td class="text-gray-500">-</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                            <td class="text-blue-700 font-bold">SI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center py-4">
+                <button
+                    onclick="document.getElementById('produccion-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                    class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
+            </div>
+        </div>
+    </section>
     <!-- Planes PC y Prime ocultos hasta clic -->
     <section id="planes-pc" class="planes-section hidden max-w-7xl mx-auto py-10 px-4">
         <h2 class="text-3xl font-bold text-center text-gray-500">Planes PC</h2>

@@ -77,9 +77,9 @@
                 <a href="planes.html" class="hover:text-yellow-400 transition">Nuestros Planes</a>
                 <a href="contadores.html" class="hover:text-blue-400">Opción Contadores</a>
                 <a href="atencion-cliente.html" class="hover:text-blue-400">Atención al Cliente</a>
-                <a href="#testimonios" class="hover:text-blue-400">Blog</a>
-                <a href="#contacto" class="hover:text-blue-400">Simulador</a>
-                <a href="#" class="bg-blue-600 px-3 py-1 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
+                <a href="blog.html" class="hover:text-blue-400">Blog</a>
+                <a href="simulador.html" class="hover:text-blue-400">Simulador</a>
+                <a href="#" class="bg-blue-600 px-3 py-1 rounded text-sm hover:bg-blue-700">Probar Ahora</a>
             </nav>
         </div>
 
@@ -89,16 +89,16 @@
             <a href="planes.html" class="block hover:text-blue-400">📊 Nuestros Planes</a>
             <a href="contadores.html" class="block hover:text-blue-400">🧾 Opción Contadores</a>
             <a href="atencion-cliente.html" class="block hover:text-blue-400">👨🏻‍💻 Atención al Cliente</a>
-            <a href="#testimonios" class="block hover:text-blue-400">📄 Blog</a>
-            <a href="#contacto" class="block hover:text-blue-400">🎯 Simulador</a>
+            <a href="blog.html" class="block hover:text-blue-400">📄 Blog</a>
+            <a href="simulador.html" class="block hover:text-blue-400">🎯 Simulador</a>
             <a href="#" class="block bg-blue-600 text-center py-2 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
         </div>
     </header>
 
     <!-- ✅ SLIDER COVERFLOW -->
     <section class="bg-[#072fcb] text-black py-12">
-        <h2 class="text-2xl font-bold text-center mb-7">Nuevas Funcionalidades</h2>
-
+        <h2 class="text-3xl font-bold mb-0 text-center mb-7">Nuevas Funcionalidades </h2>
+        <p class="text-center text-lg mb-0">Descubre las últimas mejoras y características de PERSEO</p>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="img/01.webp" alt="Slide 1" /></div>
@@ -117,7 +117,7 @@
     <!-- ✅ PLANES PERSEO (Monocromático con logo arriba) -->
     <section id="planes" class="py-1 px-6 bg-white">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-12 text-gray-800">Planes PERSEO</h2>
+            <h1 class="text-5xl font-bold mb-12 text-gray-800">Planes PERSEO</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- PLAN WEB -->
@@ -132,7 +132,7 @@
                         Sistema contable con servidor en la nube. Accede desde cualquier lugar del mundo.
                     </p>
                     <div class="text-center">
-                        <a href="#"
+                        <a href="planes.html"
                             class="inline-block border border-gray-800 text-gray-800 px-4 py-2 rounded hover:bg-gray-100 transition">
                             Más Información
                         </a>
@@ -151,7 +151,7 @@
                         Sistema contable multiempresa con servidor en la nube.
                     </p>
                     <div class="text-center">
-                        <a href="#"
+                        <a href="planes.html"
                             class="inline-block border border-gray-800 text-gray-800 px-4 py-2 rounded hover:bg-gray-100 transition">
                             Más Información
                         </a>
@@ -171,7 +171,7 @@
                         un solo sistema.
                     </p>
                     <div class="text-center">
-                        <a href="#"
+                        <a href="planes.html"
                             class="inline-block border border-gray-800 text-gray-800 px-4 py-2 rounded hover:bg-gray-100 transition">
                             Más Información
                         </a>
@@ -190,20 +190,24 @@
         <!-- Contenido alineado a la izquierda -->
         <div class="relative z-10 max-w-5xl mx-auto text-left">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black drop-shadow-xl">
-                El sistema contable que impulsa tu negocio
+                El Sistema Contable que impulsa tu negocio
             </h1>
             <p class="text-lg md:text-xl text-black/90 mb-8 max-w-xl">
                 Controla tus finanzas, ventas y facturación electrónica con PERSEO.
+            </p>
+            <p class="text-lg md:text-xl text-black/90 mb-8 max-w-xl">
+                Más de 7 años en el mercado brindando soluciones contables efectivas.
             </p>
             <div class="flex gap-4 flex-wrap">
                 <button onclick="abrirModal()"
                     class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
                     Probar Gratis por 15 días
                 </button>
-                <a href="#"
+                <button onclick="abrirModalDemoAhora()"
                     class="border border-black text-black px-6 py-3 rounded hover:bg-black hover:text-white transition">
                     Solicita una Demo
-                </a>
+                </button>
+
             </div>
         </div>
     </section>
@@ -233,6 +237,37 @@
                 <button type="submit"
                     class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Solicitar
                     Demo</button>
+            </form>
+        </div>
+    </div>
+    <!-- MODAL PARA SOLICITAR UNA DEMO AHORA -->
+    <div id="modal-demo-ahora"
+        class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-lg relative">
+            <!-- Botón de cierre -->
+            <button onclick="cerrarModalDemoAhora()"
+                class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
+
+            <!-- Contenido del modal -->
+            <h2 class="text-2xl font-bold mb-2 text-center">Solicita una demo ahora</h2>
+            <p class="text-sm text-gray-600 text-center mb-6">Completa tus datos y nos contactaremos contigo</p>
+
+            <form action="https://tudominio.com/solicitar-demo" method="POST" class="space-y-4">
+                <input type="text" name="nombre" placeholder="Nombres y apellidos" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="email" name="correo" placeholder="Correo electrónico" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="text" name="empresa" placeholder="Nombre de la compañía" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="email" name="email_empresa" placeholder="Email empresarial" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="tel" name="telefono" placeholder="Teléfono" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+
+                <button type="submit"
+                    class="w-full bg-yellow-500 text-black py-2 rounded hover:bg-yellow-400 transition">
+                    Solicitar demo ahora
+                </button>
             </form>
         </div>
     </div>
@@ -675,6 +710,15 @@
 
         function cerrarModal() {
             document.getElementById('modal-demo').classList.add('hidden');
+        }
+    </script>
+    <script>
+        function abrirModalDemoAhora() {
+            document.getElementById('modal-demo-ahora').classList.remove('hidden');
+        }
+
+        function cerrarModalDemoAhora() {
+            document.getElementById('modal-demo-ahora').classList.add('hidden');
         }
     </script>
 

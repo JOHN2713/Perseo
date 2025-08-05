@@ -6,11 +6,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opción Contadores</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+<script>
+    function mostrarPlanes(tipo) {
+        document.querySelectorAll('.planes-section').forEach(section => section.classList.add('hidden'));
+        document.getElementById(tipo).classList.remove('hidden');
+
+        const btnsc = document.getElementById('btn-soy-contador');
+        const btncp = document.getElementById('btn-contaplus');
+        const btncf = document.getElementById('btn-contafacil');
+
+        if (tipo === 'soy-contador') {
+            btnsc.classList.add('text-blue-600');
+            btnsc.classList.remove('text-black');
+            btncp.classList.remove('text-orange-500');
+            btncp.classList.add('text-black');
+        } else {
+            btncp.classList.add('text-orange-500');
+            btncp.classList.remove('text-black');
+            btnsc.classList.remove('text-blue-600');
+            btnsc.classList.add('text-black');
+        }
+        if (tipo === 'contafacil') {
+            btncf.classList.add('text-blue-600');
+            btncf.classList.remove('text-black');
+            btncp.classList.remove('text-orange-500');
+            btncp.classList.add('text-black');
+        } else {
+            btncf.classList.remove('text-blue-600');
+            btncf.classList.add('text-black');
+        }
+    }
+</script>
 <style>
+    body {
+        position: relative;
+        z-index: 0;
+        min-height: 100vh;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('img/fondo-contadores.webp');
+        background-size: 50%;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.05;
+        /* 🔁 Controla aquí la opacidad */
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    /* Toggle personalizado */
+    .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 24px;
+    }
+
+    .toggle-switch .toggle-input {
+        display: none;
+    }
+
+    .toggle-switch .toggle-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 24px;
+        background-color: #2563eb;
+        /* Azul Perseo */
+        border-radius: 34px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .toggle-switch .toggle-label::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        top: 2px;
+        left: 2px;
+        background-color: #fff;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s;
+    }
+
+    .toggle-switch .toggle-input:checked+.toggle-label {
+        background-color: #f48033;
+        /* Verde al activar */
+    }
+
+    .toggle-switch .toggle-input:checked+.toggle-label::before {
+        transform: translateX(16px);
+    }
+
+    .border-orange-500 {
+        border-color: #f97316;
+        /* Tailwind's orange-500 hex code */
+    }
+
+    .text-orange-500 {
+        color: #f97316;
+        /* Tailwind's orange-500 hex code */
+    }
+
+    .hover\:bg-orange-50:hover {
+        background-color: #fff7ed;
+        /* Tailwind's orange-50 hex code */
+    }
+
+    .bg-orange-500 {
+        background-color: #f97316;
+        /* Tailwind's orange-500 */
+    }
+
+    .bg-orange-100 {
+        background-color: #ffedd5;
+        /* Tailwind's orange-100 */
+    }
+
+    /* Make sure your custom CSS also includes definitions for rounded-tr-xl and rounded-bl-xl if you're not using Tailwind for those */
+    .rounded-tr-xl {
+        border-top-right-radius: 0.75rem;
+        /* 12px */
+    }
+
+    .rounded-bl-xl {
+        border-bottom-left-radius: 0.75rem;
+        /* 12px */
+    }
 </style>
 
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans">
 
     <!-- ✅ HEADER -->
     <header id="main-header" class="sticky top-0 z-50 bg-black text-white shadow-md transition-all duration-300">
@@ -47,10 +185,180 @@
             <a href="#" class="block bg-blue-600 text-center py-2 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
         </div>
     </header>
+    <section class="bg-white shadow-md py-4">
+        <div class="max-w-6xl mx-auto px-4 flex justify-center space-x-6">
+            <button id="btn-soy-contador" onclick="mostrarPlanes('soy-contador')"
+                class="font-semibold px-6 py-2 rounded transition text-blue-600">
+                Soy Contador
+            </button>
 
+            <button id="btn-contaplus" onclick="mostrarPlanes('contaplus')"
+                class="font-semibold px-6 py-2 rounded transition" style="color: #f97316;"> ContaPlus
+            </button>
+
+            <button id="btn-contafacil" onclick="mostrarPlanes('contafacil')"
+                class="font-semibold px-6 py-2 rounded transition" style="color: #293fe5;"> ContaFácil
+            </button>
+        </div>
+    </section>
     <!-- ✅ CONTENIDO -->
     <main class="pt-6 px-4">
+        <!-- ✅ Sección Opción Contadores con imagen de fondo -->
+        <section id="soy-contador" class="planes-section">
+            <div class="relative custom-bg-scale py-8 px-6">
+                    <img src="img/SOY-CONTADOR.webp" alt="Soy Contador" class="mx-auto h-60">
+                    <p class="text-lg text-black text-center">¡La herramienta que necesitabas, contador!<br>
+                        Con nuestro software, realiza, de forma rápida y eficaz, el control de tus procesos contables.<br>
+                        Descubre una nueva manera de administrar tu tiempo y dinero con nuestros planes exclusivos para
+                        contadores.
+                    </p>
+            </div>
+            <div class="max-w-2xl mx-auto py-2 px-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                    <!-- Plan Servicios Soy Contador -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md text-center border border-gray-200">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center">
+                                <img src="img/OPCION-SERVICIOS.webp" alt="Servicios" class="w-12 h-12">
+                            </div>
+                        </div>
 
+                        <h3 class="text-xl font-bold">Servicios</h3>
+
+                        <!-- MENSUAL / ANUAL -->
+                        <div class="flex justify-center items-center gap-3 my-4">
+                            <span class="text-sm text-gray-700 font-medium">MENSUAL</span>
+
+                            <div class="toggle-switch">
+                                <input class="toggle-input" id="toggle-servicios-soy-contador" type="checkbox"
+                                    onchange="cambiarPrecio('servicios-soy-contador', this.checked)">
+                                <label class="toggle-label" for="toggle-servicios-soy-contador"></label>
+                            </div>
+
+                            <span class="text-sm text-gray-700 font-medium">ANUAL</span>
+                        </div>
+
+                        <!-- Precio -->
+                        <p id="precio-servicios-soy-contador" class="text-2xl font-bold">$17.99</p>
+                        <p id="periodo-servicios-soy-contador" class="text-xs text-gray-500">Más IVA / Mensual</p>
+
+                        <button onclick="toggleDetails('servicios-soy-contador-details')"
+                            class="mt-4 w-full border border-blue-600 text-blue-600 py-2 rounded hover:bg-blue-50">Ver
+                            más</button>
+
+                        <div id="servicios-soy-contador-details" class="hidden mt-4 text-sm text-left">
+                            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                                <li>Registro de servicios personalizados.</li>
+                                <li>Control de ingresos y egresos.</li>
+                                <li>Usuarios ilimitados.</li>
+                                <li>Soporte por correo y chat.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Plan Comercial -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md text-center border-2 border-blue-600 relative">
+                        <div
+                            class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-bl-xl rounded-tr-xl">
+                            EL MÁS VENDIDO
+                        </div>
+
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center">
+                                <img src="img/OPCION-COMERCIAL.webp" alt="Comercial" class="w-12 h-12">
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold">Comercial</h3>
+
+                        <!-- MENSUAL / ANUAL -->
+                        <div class="flex justify-center items-center gap-3 my-4">
+                            <span class="text-sm text-gray-700 font-medium">MENSUAL</span>
+
+                            <div class="toggle-switch">
+                                <input class="toggle-input" id="toggle-comercial-soy-contador" type="checkbox"
+                                    onchange="cambiarPrecio('comercial-soy-contador', this.checked)">
+                                <label class="toggle-label" for="toggle-comercial-soy-contador"></label>
+                            </div>
+
+                            <span class="text-sm text-gray-700 font-medium">ANUAL</span>
+                        </div>
+
+                        <!-- Precio -->
+                        <p id="precio-comercial-soy-contador" class="text-2xl font-bold">$23.99</p>
+                        <p id="periodo-comercial-soy-contador" class="text-xs text-gray-500">Más IVA / Mensual</p>
+
+                        <button onclick="toggleDetails('comercial-soy-contador-details')"
+                            class="mt-4 w-full border border-blue-600 text-blue-600 py-2 rounded hover:bg-blue-50">Ver
+                            más</button>
+
+                        <div id="comercial-soy-contador-details" class="hidden mt-4 text-sm text-left">
+                            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                                <li>Inventario avanzado y categorización.</li>
+                                <li>Gestor contable y financiero completo.</li>
+                                <li>Usuarios ilimitados y soporte prioritario.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contaplus" class="planes-section hidden max-w-6xl mx-auto py-12 px-4">
+            <!-- Logo ContaPlus -->
+            <div class="text-center mb-10">
+                <img src="img/CONTAPLUS (1).webp" alt="ContaPlus" class="mx-auto h-60">
+            </div>
+
+            <!-- Contenedores de planes -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Plan Ideal -->
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center border border-gray-200">
+                    <h2 class="text-4xl font-bold mb-2">IDEAL</h2>
+                    <p class="text-gray-700 text-sm">Pensado para negocios que inician su digitalización.</p>
+                    <p class="mt-4 text-2xl font-bold text-blue-600">$499.99</p>
+                    <p class="text-xs text-gray-500">Más IVA / Mensual</p>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center border-2 border-orange-500 relative">
+                    <div
+                        class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-bl-xl rounded-tr-xl">
+                        RECOMENDADO
+                    </div>
+                    <h3 class="text-4xl font-bold mb-2">PREMIUM</h3>
+                    <p class="text-gray-700 text-sm">Ideal para empresas en crecimiento con mayor demanda de procesos.
+                    </p>
+                    <p class="text-black text-sm font-bold text-xl">Pago Anual.
+                    </p>
+                    <p class="mt-4 text-2xl font-bold text-orange-500">$749.99</p>
+                    <p class="text-xs text-gray-500">Más IVA / Mensual</p>
+                </div>
+
+                <!-- Plan Platino -->
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center border border-gray-200">
+                    <h3 class="text-4xl font-bold mb-2">PLATINO</h3>
+                    <p class="text-gray-700 text-sm">La experiencia más completa con todo el soporte y funcionalidades.
+                    </p>
+                    <p class="mt-4 text-2xl font-bold text-blue-600">$999.99</p>
+                    <p class="text-xs text-gray-500">Más IVA / Mensual</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contafacil" class="planes-section hidden max-w-4xl mx-auto py-12 px-4">
+            <!-- Logo ContaFácil -->
+            <div class="text-center mb-10">
+                <img src="img/LOGO-CONTAFACIL-500X200.webp" alt="ContaFácil" class="mx-auto h-60">
+            </div>
+
+            <!-- Módulo 1 empresa -->
+            <div class="bg-white p-6 rounded-2xl shadow-md text-center border border-gray-200 max-w-sm mx-auto">
+                <h3 class="text-xl font-bold mb-2">ContaFácil</h3>
+                <p class="text-gray-700 text-sm">Ideal para una sola empresa</p>
+                <p class="mt-4 text-2xl font-bold text-blue-600">$9.99</p>
+                <p class="text-xs text-gray-500">Más IVA / Mensual</p>
+            </div>
+        </section>
     </main>
 
     <!-- ✅ FOOTER PERSEO -->
@@ -159,13 +467,21 @@
             <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
             <a href="https://wa.me/593999774777" target="_blank"
                 class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
-                Iniciar Chat en WhatsApp
+                Contactar con un Asesor
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Solicitar Soporte Técnico
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Atención al Cliente
             </a>
         </div>
 
         <!-- Botón con el astronauta -->
         <button onclick="toggleChat()" class="focus:outline-none m-0 p-0">
-            <img src="img/ANIMACION PERSI HELLO (1).gif" alt="WhatsApp Astronauta" style="width: 250px; height: auto;"
+            <img src="img/ANIMACION PERSI HELLO (1).gif" alt="WhatsApp Astronauta" style="width: 75px; height: auto;"
                 class="drop-shadow-xl hover:scale-110 transition-transform duration-300" />
         </button>
     </div>
@@ -174,6 +490,31 @@
         function toggleChat() {
             const bubble = document.getElementById('chat-bubble');
             bubble.classList.toggle('hidden');
+        }
+    </script>
+    <script>
+        function cambiarPrecio(planId, esAnual) {
+            const precios = {
+                'servicios-soy-contador': { mensual: 17.99, anual: 179.99 },
+                'comercial-soy-contador': { mensual: 23.99, anual: 215.99 }
+            };
+
+            const precioEl = document.getElementById(`precio-${planId}`);
+            const periodoEl = document.getElementById(`periodo-${planId}`);
+
+            if (esAnual) {
+                precioEl.textContent = `$${precios[planId].anual}`;
+                periodoEl.textContent = 'Más IVA / Anual';
+            } else {
+                precioEl.textContent = `$${precios[planId].mensual}`;
+                periodoEl.textContent = 'Más IVA / Mensual';
+            }
+        }
+    </script>
+    <script>
+        function toggleDetails(id) {
+            const section = document.getElementById(id);
+            section.classList.toggle("hidden");
         }
     </script>
 </body>

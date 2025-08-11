@@ -1872,6 +1872,34 @@
             }
         }
     </script>
+    <!-- ✅ BOTÓN FLOTANTE DE WHATSAPP CON ASTRONAUTA -->
+    <div id="whatsapp-float" class="fixed bottom-4 right-1 z-50 flex flex-col items-end space-y-1">
+
+        <!-- Burbuja de Chat (ahora arriba) -->
+        <div id="chat-bubble" class="hidden w-72 bg-white rounded-xl shadow-xl p-4 text-sm text-gray-700">
+            <p class="mb-3 font-semibold">¿Necesitas ayuda?</p>
+            <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Contactar con un Asesor
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Solicitar Soporte Técnico
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Atención al Cliente
+            </a>
+        </div>
+
+        <!-- Botón con el astronauta -->
+        <button onclick="toggleChat()" class="focus:outline-none m-0 p-0">
+            <img src="img/ANIMACION PERSI HELLO (1).gif" alt="WhatsApp Astronauta" style="width: 75px; height: auto;"
+                class="drop-shadow-xl hover:scale-110 transition-transform duration-300" />
+        </button>
+    </div>
+
 
 </body>
 

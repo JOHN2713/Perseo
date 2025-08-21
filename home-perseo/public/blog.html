@@ -48,9 +48,139 @@
 
     <!-- ✅ CONTENIDO -->
     <main class="pt-6 px-4">
+        <section id="blog" class="max-w-7xl mx-auto py-16 px-6">
+            <!-- Título principal -->
+            <h2 class="text-4xl font-extrabold text-blue-700 text-center mb-4">Últimos artículos del blog</h2>
+            <p class="text-center text-gray-600 mb-12">Información útil para llevar tu gestión contable al siguiente
+                nivel.</p>
+
+            <!-- Grid de artículos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <!-- Artículo 1 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <img src="img/blog1.jpg" alt="Imagen blog 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-blue-700 mb-2">¿Cómo automatizar tus declaraciones mensuales
+                            con Perseo?</h3>
+                        <p class="text-sm text-gray-600 mb-4">Descubre paso a paso cómo simplificar tus obligaciones
+                            fiscales usando nuestra plataforma contable.</p>
+                        <button onclick="abrirModalBlog('modal1')"
+                            class="text-orange-500 font-semibold hover:underline">Leer más</button>
+                    </div>
+                </div>
+
+                <!-- Artículo 2 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <img src="img/blog2.jpg" alt="Imagen blog 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-blue-700 mb-2">Tips para organizar tus cuentas por pagar y
+                            cobrar</h3>
+                        <p class="text-sm text-gray-600 mb-4">Lleva el control financiero con claridad y evita errores
+                            comunes en tu flujo de caja.</p>
+                        <button onclick="abrirModalBlog('modal2')"
+                            class="text-orange-500 font-semibold hover:underline">Leer más</button>
+                    </div>
+                </div>
+
+                <!-- Artículo 3 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <img src="img/blog3.jpg" alt="Imagen blog 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-blue-700 mb-2">Errores frecuentes al emitir facturas
+                            electrónicas</h3>
+                        <p class="text-sm text-gray-600 mb-4">Evita sanciones del SRI con esta guía práctica para
+                            facturar correctamente.</p>
+                        <button onclick="abrirModalBlog('modal3')"
+                            class="text-orange-500 font-semibold hover:underline">Leer más</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categorías y palabras clave -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div>
+                    <h4 class="text-xl font-bold text-blue-700 mb-2">Categorías</h4>
+                    <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                        <li>Declaraciones</li>
+                        <li>Contabilidad</li>
+                        <li>Facturación Electrónica</li>
+                        <li>Gestión Financiera</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-blue-700 mb-2">Palabras clave</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#SRI</span>
+                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#contabilidad</span>
+                        <span
+                            class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#automatización</span>
+                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#facturación</span>
+                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#finanzas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de PERSEONAUTAS (solo visible en escritorio) -->
+            <section class="hidden md:block mt-16 px-4 max-w-7xl mx-auto">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl font-extrabold text-blue-700">Juega PERSEONAUTAS 🎮</h2>
+                    <p class="text-gray-700">¡Explora el universo contable de Perseo y diviértete mientras aprendes!</p>
+                </div>
+
+                <div class="relative w-full rounded-xl overflow-hidden shadow-lg" style="padding-top: 56.25%;">
+                    <iframe src="https://galagaperseo.onrender.com/" frameborder="0" allowfullscreen
+                        class="absolute top-0 left-0 w-full h-full">
+                    </iframe>
+                </div>
+            </section>
+
+
+            <!-- Aviso para móviles -->
+            <div class="block md:hidden mt-12 text-center text-gray-500 text-sm italic">
+                El juego PERSEONAUTAS solo está disponible en la versión de escritorio.
+            </div>
+
+            <!-- Modales para artículos -->
+            <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+                <div class="bg-white rounded-xl p-6 max-w-2xl w-full relative">
+                    <button onclick="cerrarModalBlog('modal1')"
+                        class="absolute top-2 right-4 text-gray-500 text-xl">&times;</button>
+                    <h3 class="text-2xl font-bold mb-4">¿Cómo automatizar tus declaraciones mensuales con Perseo?</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">[Contenido completo del artículo 1]</p>
+                </div>
+            </div>
+            <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+                <div class="bg-white rounded-xl p-6 max-w-2xl w-full relative">
+                    <button onclick="cerrarModalBlog('modal2')"
+                        class="absolute top-2 right-4 text-gray-500 text-xl">&times;</button>
+                    <h3 class="text-2xl font-bold mb-4">Tips para organizar tus cuentas por pagar y cobrar</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">[Contenido completo del artículo 2]</p>
+                </div>
+            </div>
+            <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+                <div class="bg-white rounded-xl p-6 max-w-2xl w-full relative">
+                    <button onclick="cerrarModalBlog('modal3')"
+                        class="absolute top-2 right-4 text-gray-500 text-xl">&times;</button>
+                    <h3 class="text-2xl font-bold mb-4">Errores frecuentes al emitir facturas electrónicas</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">[Contenido completo del artículo 3]</p>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function abrirModalBlog(id) {
+                document.getElementById(id).classList.remove("hidden");
+                document.getElementById(id).classList.add("flex");
+            }
+            function cerrarModalBlog(id) {
+                document.getElementById(id).classList.remove("flex");
+                document.getElementById(id).classList.add("hidden");
+            }
+        </script>
+
     </main>
 
-     <!-- ✅ FOOTER PERSEO -->
+    <!-- ✅ FOOTER PERSEO -->
     <footer class="bg-black text-white pt-10 pb-6 px-6">
         <div class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center md:text-left">
 
@@ -156,13 +286,21 @@
             <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
             <a href="https://wa.me/593999774777" target="_blank"
                 class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
-                Iniciar Chat en WhatsApp
+                Contactar con un Asesor
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Solicitar Soporte Técnico
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Atención al Cliente
             </a>
         </div>
 
         <!-- Botón con el astronauta -->
         <button onclick="toggleChat()" class="focus:outline-none m-0 p-0">
-            <img src="img/PERSY.gif" alt="WhatsApp Astronauta" style="width: 250px; height: auto;"
+            <img src="img/ANIMACION PERSI HELLO (1).gif" alt="WhatsApp Astronauta" style="width: 75px; height: auto;"
                 class="drop-shadow-xl hover:scale-110 transition-transform duration-300" />
         </button>
     </div>

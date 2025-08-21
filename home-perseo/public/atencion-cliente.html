@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opción Contadores</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-white text-gray-800 font-sans">
@@ -48,9 +65,205 @@
 
     <!-- ✅ CONTENIDO -->
     <main class="pt-6 px-4">
+        <section id="atencion-cliente" class="max-w-6xl mx-auto py-12 px-4">
+            <!-- Encabezado -->
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-blue-700">Atención al Cliente & Soporte Técnico</h2>
+                <p class="text-gray-600">Estamos aquí para ayudarte en todo momento</p>
+            </div>
+
+            <!-- Contacto principal -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <h3 class="font-bold text-lg mb-2">WhatsApp</h3>
+                    <p class="text-blue-600 font-semibold">+593 99 999 9999</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <h3 class="font-bold text-lg mb-2">Llamadas</h3>
+                    <p class="text-blue-600 font-semibold">02 345 6789 / 1800 PERSEO</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <h3 class="font-bold text-lg mb-2">Correo</h3>
+                    <p class="text-blue-600 font-semibold">soporte@perseo.ec</p>
+                </div>
+            </div>
+
+            <!-- Soporte técnico -->
+            <div class="bg-gray-50 p-8 rounded-xl mb-12">
+                <h3 class="text-2xl font-bold text-blue-700 mb-2">Soporte Técnico</h3>
+                <p class="text-gray-700 mb-4">Nuestro equipo está listo para ayudarte a resolver cualquier inconveniente
+                    técnico relacionado con nuestros sistemas.</p>
+                <ul class="text-sm text-gray-600 list-disc ml-5 mb-4">
+                    <li>Lunes a Viernes: 08h00 a 18h00</li>
+                    <li>Sábados: 09h00 a 13h00</li>
+                </ul>
+
+                <!-- Formulario -->
+                <form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Nombres y apellidos" class="border rounded px-4 py-2" required>
+                    <input type="email" placeholder="Correo electrónico" class="border rounded px-4 py-2" required>
+                    <input type="text" placeholder="Teléfono" class="border rounded px-4 py-2" required>
+                    <input type="text" placeholder="Motivo del ticket" class="border rounded px-4 py-2 sm:col-span-2"
+                        required>
+                    <textarea placeholder="Escribe tu mensaje aquí" rows="4"
+                        class="border rounded px-4 py-2 sm:col-span-2" required></textarea>
+                    <button type="submit"
+                        class="bg-blue-500 text-white py-2 rounded hover:bg-orange-600 transition sm:col-span-2">Generar
+                        Ticket</button>
+                </form>
+            </div>
+
+            <!-- FAQ con buscador -->
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h3 class="text-2xl font-bold text-blue-700 mb-4">Preguntas Frecuentes</h3>
+                <input id="faq-search" type="text" placeholder="Buscar pregunta..."
+                    class="w-full px-4 py-2 border mb-4 rounded">
+
+                <ul id="faq-list" class="space-y-4">
+                    <li class="faq-item">
+                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cómo generar anticipos a proveedores?</h4>
+                            <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
+                                Para ingresar un anticipo a un proveedor en PerseoWeb:<br>
+                                1. Desde el módulo de pagos, ingresar la identificación del proveedor<br>
+                                2. Seleccionar la opción de anticipo<br>
+                                3. Colocar el valor del anticipo<br>
+                                4. Dependiendo de la forma de pago, seleccionar guardar<br>
+                                <a href="#" class="text-blue-600 underline mt-2 inline-block">Ver video explicativo</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq-item">
+                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cómo registrar una compra y relacionarla con anticipo?</h4>
+                            <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
+                                Pasos para registrar y relacionar:<br>
+                                1. Colocar el mismo proveedor<br>
+                                2. Seleccionar "crédito" como forma de pago<br>
+                                3. Guardar y contabilizar la compra<br>
+                                4. Ir a estado de cuenta del proveedor<br>
+                                5. Relacionar anticipos y actualizar<br>
+                                <a href="#" class="text-blue-600 underline mt-2 inline-block">Ver video explicativo</a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- Preguntas ocultas inicialmente -->
+                    <li class="faq-item hidden">
+                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Dónde se pueden cambiar los precios en la sección de tarifas?</h4>
+                            <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
+                                Para modificar precios en la sección de tarifas:<br>
+                                1. Ir al módulo de compras<br>
+                                2. Seleccionar la opción "Tarifas"<br>
+                                3. Elegir el producto a modificar<br>
+                                4. Actualizar los precios según las medidas<br>
+                                5. Guardar los cambios<br>
+                                <a href="#" class="text-blue-600 underline mt-2 inline-block">Ver video explicativo</a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- Nueva pregunta oculta -->
+                    <li class="faq-item hidden">
+                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cuentan con una aplicación de facturación electrónica?</h4>
+                            <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
+                                Sí. Nuestra aplicación de facturación electrónica se llama Facturito, la cual te ofrece:<br>
+                                • Facturas ilimitadas por un pago anual<br>
+                                • Firma electrónica integrada<br>
+                                • Envío automático al SRI<br>
+                                • Notificaciones por email<br>
+                                <a href="#" class="text-blue-600 underline mt-2 inline-block">Conocer más sobre Facturito</a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- Nueva pregunta sobre eliminar relación entre anticipo y compra -->
+                    <li class="faq-item hidden">
+                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cómo se elimina la relación entre un anticipo y una compra en PerseoWeb?</h4>
+                            <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
+                                Para eliminar la relación entre un anticipo y una compra:<br>
+                                1. Dirigirse a la opción "Relacionar anticipos"<br>
+                                2. Cambiar a reversa la relación<br>
+                                3. Consultar los movimientos relacionados<br>
+                                4. Seleccionar el botón "Eliminar relación"<br>
+                                5. Actualizar los datos<br>
+                                <a href="#" class="text-blue-600 underline mt-2 inline-block">Ver video explicativo</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Función para mostrar solo las preguntas principales
+                function mostrarPreguntasPrincipales() {
+                    document.querySelectorAll('.faq-item').forEach((item, index) => {
+                        if (index < 2) { // Solo muestra las primeras 2 preguntas
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+
+                // Mostrar preguntas principales al cargar
+                mostrarPreguntasPrincipales();
+
+                document.getElementById('faq-search').addEventListener('input', function() {
+                    const query = this.value.toLowerCase().trim();
+                    
+                    // Si el buscador está vacío, mostrar solo las preguntas principales
+                    if (query === '') {
+                        mostrarPreguntasPrincipales();
+                        return;
+                    }
+
+                    // Palabras clave relacionadas con cada pregunta
+                    const keywords = {
+                        'tarifas': ['precio', 'tarifa', 'valor', 'costo', 'cambiar', 'modificar'],
+                        'anticipos': ['anticipo', 'proveedor', 'pago', 'adelanto', 'relacion', 'eliminar', 'reversa'],
+                        'compras': ['compra', 'factura', 'registro', 'relacionar'],
+                        'facturacion': ['factura', 'facturito', 'electronica', 'sri', 'comprobante', 'firma']
+                    };
+
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        const pregunta = item.querySelector('h4').textContent.toLowerCase();
+                        const respuesta = item.querySelector('p').textContent.toLowerCase();
+                        
+                        // Buscar coincidencias directas
+                        let matches = pregunta.includes(query) || respuesta.includes(query);
+                        
+                        // Buscar coincidencias por palabras clave
+                        if (!matches) {
+                            for (let category in keywords) {
+                                if (keywords[category].some(keyword => query.includes(keyword))) {
+                                    matches = pregunta.includes(category) || respuesta.includes(category);
+                                }
+                            }
+                        }
+
+                        // Mostrar/ocultar con animación
+                        if (matches) {
+                            item.style.display = 'block';
+                            item.classList.add('fade-in');
+                            setTimeout(() => item.classList.remove('fade-in'), 500);
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        </script>
+
+
     </main>
 
-     <!-- ✅ FOOTER PERSEO -->
+    <!-- ✅ FOOTER PERSEO -->
     <footer class="bg-black text-white pt-10 pb-6 px-6">
         <div class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center md:text-left">
 
@@ -156,13 +369,21 @@
             <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
             <a href="https://wa.me/593999774777" target="_blank"
                 class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
-                Iniciar Chat en WhatsApp
+                Contactar with un Asesor
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Solicitar Soporte Técnico
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Atención al Cliente
             </a>
         </div>
 
         <!-- Botón con el astronauta -->
         <button onclick="toggleChat()" class="focus:outline-none m-0 p-0">
-            <img src="img/PERSY.gif" alt="WhatsApp Astronauta" style="width: 250px; height: auto;"
+            <img src="img/ANIMACION PERSI HELLO (1).gif" alt="WhatsApp Astronauta" style="width: 75px; height: auto;"
                 class="drop-shadow-xl hover:scale-110 transition-transform duration-300" />
         </button>
     </div>

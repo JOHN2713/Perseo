@@ -10,32 +10,32 @@
 </head>
 <script>
     function mostrarPlanes(tipo) {
+        // Ocultar todas las secciones
         document.querySelectorAll('.planes-section').forEach(section => section.classList.add('hidden'));
+
+        // Mostrar solo la sección seleccionada
         document.getElementById(tipo).classList.remove('hidden');
 
-        const btnsc = document.getElementById('btn-soy-contador');
-        const btncp = document.getElementById('btn-contaplus');
-        const btncf = document.getElementById('btn-contafacil');
+        // Botones
+        const botones = [
+            { id: 'btn-soy-contador', color: 'text-blue-600' },
+            { id: 'btn-contaplus', color: 'text-orange-500' },
+            { id: 'btn-contafacil', color: 'text-blue-600' }
+        ];
 
-        if (tipo === 'soy-contador') {
-            btnsc.classList.add('text-blue-600');
-            btnsc.classList.remove('text-black');
-            btncp.classList.remove('text-orange-500');
-            btncp.classList.add('text-black');
-        } else {
-            btncp.classList.add('text-orange-500');
-            btncp.classList.remove('text-black');
-            btnsc.classList.remove('text-blue-600');
-            btnsc.classList.add('text-black');
-        }
-        if (tipo === 'contafacil') {
-            btncf.classList.add('text-blue-600');
-            btncf.classList.remove('text-black');
-            btncp.classList.remove('text-orange-500');
-            btncp.classList.add('text-black');
-        } else {
-            btncf.classList.remove('text-blue-600');
-            btncf.classList.add('text-black');
+        // Quitar estilos de todos los botones
+        botones.forEach(boton => {
+            const el = document.getElementById(boton.id);
+            el.classList.remove(boton.color);
+            el.classList.add('text-black');
+        });
+
+        // Agregar estilo al botón activo
+        const botonActivo = botones.find(b => tipo.includes(b.id.replace('btn-', '')));
+        if (botonActivo) {
+            const el = document.getElementById(botonActivo.id);
+            el.classList.remove('text-black');
+            el.classList.add(botonActivo.color);
         }
     }
 </script>
@@ -145,6 +145,22 @@
     .rounded-bl-xl {
         border-bottom-left-radius: 0.75rem;
         /* 12px */
+    }
+
+    .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 </style>
 
@@ -655,7 +671,8 @@
                     class="flex items-start gap-3 bg-white backdrop-blur rounded-xl p-4 shadow hover:shadow-md transition">
                     <svg class="w-6 h-6 text-orange-500 mt-0.5" viewBox="0 0 24 24" fill="currentColor"
                         aria-hidden="true">
-                        <path d="M4 4v5h.582M20 20v-5h-.581M4.582 9C6.06 6.022 9.292 4 13 4c5.523 0 10 4.477 10 10 0 1.657-.403 3.226-1.118 4.604M19.418 15C17.94 17.978 14.708 20 11 20c-5.523 0-10-4.477-10-10 0-1.657.403-3.226 1.118-4.604" />
+                        <path
+                            d="M4 4v5h.582M20 20v-5h-.581M4.582 9C6.06 6.022 9.292 4 13 4c5.523 0 10 4.477 10 10 0 1.657-.403 3.226-1.118 4.604M19.418 15C17.94 17.978 14.708 20 11 20c-5.523 0-10-4.477-10-10 0-1.657.403-3.226 1.118-4.604" />
                     </svg>
                     <div>
                         <p class="font-semibold">Actualizaciones</p>
@@ -666,7 +683,8 @@
                 <!-- 2 Videos Tutoriales -->
                 <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow hover:shadow-md transition">
                     <svg class="w-6 h-6 text-orange-500 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14m0 0V10m0 4l-4.553 2.276A1 1 0 019 15.382V8.618a1 1 0 011.447-.894L15 10z" />
+                        <path
+                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14m0 0V10m0 4l-4.553 2.276A1 1 0 019 15.382V8.618a1 1 0 011.447-.894L15 10z" />
                     </svg>
                     <div>
                         <p class="font-semibold">Videos Tutoriales</p>
@@ -700,8 +718,7 @@
                 <!-- 5 Dominio -->
                 <div class="flex items-start gap-3 bg-white rounded-xl p-4 shadow hover:shadow-md transition">
                     <svg class="w-6 h-6 text-orange-500 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M6 14v6h12v-6" />
+                        <path d="M6 14v6h12v-6" />
                     </svg>
                     <div>
                         <p class="font-semibold">Dominio</p>
@@ -740,20 +757,106 @@
             </div>
         </section>
 
-        <section id="contafacil" class="planes-section hidden max-w-4xl mx-auto py-12 px-4">
-            <!-- Logo ContaFácil -->
-            <div class="text-center mb-10">
-                <img src="img/LOGO-CONTAFACIL-500X200.webp" alt="ContaFácil" class="mx-auto h-60">
+        <section id="contafacil" class="planes-section hidden max-w-6xl mx-auto py-12 px-4">
+            <!-- Título -->
+            <div class="relative custom-bg-scale py-8 px-6">
+                <img src="img/LOGO-CONTAFACIL-500X200.webp" alt="Contafacil" class="mx-auto h-40">
+                <h2 class="text-3xl font-extrabold text-blue-700 text-center">Cotiza tu plan ContaFácil</h2>
+                <p class="text-gray-600 text-center">Selecciona el número de empresas y conoce el valor anual.</p>
             </div>
 
-            <!-- Módulo 1 empresa -->
-            <div class="bg-white p-6 rounded-2xl shadow-md text-center border border-gray-200 max-w-sm mx-auto">
-                <h3 class="text-xl font-bold mb-2">ContaFácil</h3>
-                <p class="text-gray-700 text-sm">Ideal para una sola empresa</p>
-                <p class="mt-4 text-2xl font-bold text-blue-600">$9.99</p>
-                <p class="text-xs text-gray-500">Más IVA / Mensual</p>
+            <!-- Contenido -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <!-- Lista empresas (cambia a dropdown en mobile) -->
+                <div class="bg-white rounded-xl shadow-md p-6 border">
+                    <h3 class="text-xl font-semibold mb-4">Selecciona número de empresas:</h3>
+
+                    <!-- Mobile dropdown -->
+                    <div class="block md:hidden">
+                        <select id="empresa-dropdown" class="w-full border px-4 py-2 rounded"
+                            onchange="actualizarPrecio(this.value)">
+                            <!-- JS rellenará opciones -->
+                        </select>
+                    </div>
+
+                    <!-- Lista para desktop -->
+                    <ul id="empresa-list" class="space-y-2 hidden md:block">
+                        <!-- JS rellenará opciones -->
+                    </ul>
+                </div>
+
+                <!-- Panel derecho -->
+                <div class="bg-white rounded-xl shadow-md p-6 border text-center">
+                    <h4 class="text-lg font-semibold mb-2">Precio Anual</h4>
+                    <p id="precio"
+                        class="text-4xl font-bold text-orange-500 mb-1 transition-opacity duration-500 opacity-100">$0
+                    </p>
+                    <p class="text-sm text-gray-500 mb-6">+ IVA</p>
+
+                    <!-- Módulos disponibles -->
+                    <div id="modulos" class="text-left mb-6 hidden fade-in">
+                        <h5 class="text-lg font-semibold mb-2">Módulos de gestión incluidos:</h5>
+                        <ul class="list-disc ml-6 text-sm text-gray-700 space-y-1">
+                            <li>Multiempresa</li>
+                            <li>Usuarios ilimitados</li>
+                            <li>Creación de usuarios con RUC o Cédula</li>
+                            <li>ATS en minutos</li>
+                            <li>Carga masiva XML, ZIP, TXT, XLSX</li>
+                            <li>Registro de gastos personales</li>
+                            <li>Anexo de gastos personales</li>
+                            <li>Diarios contables automáticos</li>
+                            <li>Anexo transaccional</li>
+                            <li>Libro diario</li>
+                            <li>Balance de comprobación</li>
+                            <li>Balance general</li>
+                            <li>Estado de resultados</li>
+                            <li>Nómina</li>
+                        </ul>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="space-x-4">
+                        <button onclick="abrirModal()"
+                            class="bg-orange-500 text-white font-semibold px-6 py-2 rounded hover:bg-orange-600 transition">Más
+                            información</button>
+                        <button onclick="window.location.href='#'"
+                            class="border border-orange-500 text-orange-500 font-semibold px-6 py-2 rounded hover:bg-orange-50 transition">Adquirir
+                            ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal oculto -->
+            <div id="modal-contafacil"
+                class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
+                <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-lg relative">
+                    <button onclick="cerrarModal()"
+                        class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
+                    <h2 class="text-2xl font-bold mb-2 text-center">¡Contactar con un Asesor!</h2>
+                    <p class="text-sm text-gray-600 text-center mb-6">Regístrate y nos contactaremos contigo</p>
+                    <form action="#" method="POST" class="space-y-4">
+                        <input type="text" name="nombre" placeholder="Nombres y apellidos" required
+                            class="w-full px-4 py-2 border rounded">
+                        <input type="email" name="correo" placeholder="Correo electrónico" required
+                            class="w-full px-4 py-2 border rounded">
+                        <input type="text" name="empresa" placeholder="Nombre de la compañía" required
+                            class="w-full px-4 py-2 border rounded">
+                        <input type="tel" name="telefono" placeholder="Teléfono" required
+                            class="w-full px-4 py-2 border rounded">
+                        <div class="text-left">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" required class="form-checkbox text-orange-500">
+                                <span class="ml-2 text-sm text-gray-600">Acepto los términos y condiciones</span>
+                            </label>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Solicitar
+                            Información</button>
+                    </form>
+                </div>
             </div>
         </section>
+
     </main>
     <br></br>
     <!-- ✅ FOOTER PERSEO -->
@@ -888,30 +991,78 @@
         }
     </script>
     <script>
-        function cambiarPrecio(planId, esAnual) {
-            const precios = {
-                'servicios-soy-contador': { mensual: 17.99, anual: 179.99 },
-                'comercial-soy-contador': { mensual: 23.99, anual: 215.99 }
-            };
+        const precios = {
+            1: 30,
+            5: 100,
+            10: 175,
+            15: 250,
+            20: 325,
+            25: 400,
+            30: 475,
+            50: 550,
+            100: 625,
+            150: 700,
+            200: 775,
+            250: 850,
+            300: 925
+        };
 
-            const precioEl = document.getElementById(`precio-${planId}`);
-            const periodoEl = document.getElementById(`periodo-${planId}`);
+        const lista = document.getElementById('empresa-list');
+        const precio = document.getElementById('precio');
+        const modulos = document.getElementById('modulos');
+        const accionesExtra = document.getElementById('accionesExtra');
+        const dropdown = document.getElementById('empresa-dropdown');
 
-            if (esAnual) {
-                precioEl.textContent = `$${precios[planId].anual}`;
-                periodoEl.textContent = 'Más IVA / Anual';
+        // Render dinámico
+        Object.keys(precios).forEach(num => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+            <button class="w-full text-left px-4 py-2 rounded border hover:bg-orange-50 transition">
+                ${num} empresa${num > 1 ? 's' : ''}
+            </button>
+        `;
+            li.querySelector('button').addEventListener('click', () => {
+                precio.textContent = `$${precios[num]}`;
+                modulos.classList.remove('hidden');
+                accionesExtra?.classList.add('hidden');
+                precio.classList.add("fade-in");
+                setTimeout(() => precio.classList.remove("fade-in"), 500);
+            });
+            lista.appendChild(li);
+        });
+
+        // Modal funciones
+        function abrirModal() {
+            document.getElementById('modal-contafacil').classList.remove('hidden');
+        }
+        function cerrarModal() {
+            document.getElementById('modal-contafacil').classList.add('hidden');
+        }
+        Object.keys(precios).forEach(num => {
+            // Agrega al dropdown
+            const option = document.createElement('option');
+            option.value = num;
+            option.textContent = `${num} empresa${num > 1 ? 's' : ''}`;
+            dropdown.appendChild(option);
+        });
+
+        // Función que se llama desde el <select onchange="...">
+        function actualizarPrecio(valor) {
+            const precioNum = precios[valor];
+            if (precioNum) {
+                precio.textContent = `$${precioNum}`;
+                modulos.classList.remove('hidden');
+                accionesExtra?.classList.add('hidden');
+                precio.classList.add("fade-in");
+                setTimeout(() => precio.classList.remove("fade-in"), 500);
             } else {
-                precioEl.textContent = `$${precios[planId].mensual}`;
-                periodoEl.textContent = 'Más IVA / Mensual';
+                precio.textContent = `--`;
+                accionesExtra?.classList.remove('hidden');
             }
         }
     </script>
-    <script>
-        function toggleDetails(id) {
-            const section = document.getElementById(id);
-            section.classList.toggle("hidden");
-        }
-    </script>
-    </body>
+
+
+</body>
 
 </html>

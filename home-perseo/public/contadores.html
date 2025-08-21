@@ -991,6 +991,29 @@
         }
     </script>
     <script>
+        function cambiarPrecio(planId, esAnual) {
+            const precios = {
+                'servicios-soy-contador': { mensual: 17.99, anual: 179.99 },
+                'comercial-soy-contador': { mensual: 23.99, anual: 215.99 }
+            };
+            const precioEl = document.getElementById(`precio-${planId}`);
+            const periodoEl = document.getElementById(`periodo-${planId}`);
+    
+            if (esAnual) {
+                precioEl.textContent = `$${precios[planId].anual}`;
+                periodoEl.textContent = 'Más IVA / Anual';
+            } else {
+                precioEl.textContent = `$${precios[planId].mensual}`;
+                periodoEl.textContent = 'Más IVA / Mensual';
+            }
+        } 
+    </script>
+    <script> function toggleDetails(id) {
+            const section = document.getElementById(id);
+            section.classList.toggle("hidden");
+        } 
+    </script>
+    <script>
         const precios = {
             1: 30,
             5: 100,

@@ -48,9 +48,42 @@
 
     <!-- ✅ CONTENIDO -->
     <main class="pt-6 px-4">
+        <!-- Sección del Simulador Perseo -->
+        <section id="simulador" class="max-w-7xl mx-auto py-16 px-6">
+            <!-- Título -->
+            <h2 class="text-4xl font-extrabold text-blue-700 text-center mb-4">Simulador Interactivo de Perseo</h2>
+            <p class="text-center text-gray-600 mb-10">Explora cada rincón de nuestro sistema con este recorrido
+                interactivo y aprende a tu ritmo cómo funciona Perseo en sus distintos planes.</p>
+
+            <!-- Submenú de categorías -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <button
+                    class="px-4 py-2 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition">Perseo
+                    PC</button>
+                <button
+                    class="px-4 py-2 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition opacity-50 cursor-not-allowed">Perseo
+                    Web</button>
+                <button
+                    class="px-4 py-2 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition opacity-50 cursor-not-allowed">Facturación
+                    Electrónica</button>
+            </div>
+
+            <!-- Simulador embebido -->
+            <div class="relative w-full rounded-xl overflow-hidden shadow-lg" style="padding-top: 56.25%;">
+                <iframe src="https://view.genially.com/68718fcf70419b684eed0985/interactive-content-perseo-pc"
+                    class="absolute top-0 left-0 w-full h-full" frameborder="0" allowfullscreen loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Aviso si se desea -->
+            <p class="text-sm text-center text-gray-500 italic mt-4">
+                El simulador funciona mejor en pantallas grandes para una experiencia completa.
+            </p>
+        </section>
+
     </main>
 
-     <!-- ✅ FOOTER PERSEO -->
+    <!-- ✅ FOOTER PERSEO -->
     <footer class="bg-black text-white pt-10 pb-6 px-6">
         <div class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center md:text-left">
 
@@ -156,13 +189,21 @@
             <p class="mb-2">¡Hola! Soy el equipo PERSEO, ¿en qué podemos ayudarte hoy?</p>
             <a href="https://wa.me/593999774777" target="_blank"
                 class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
-                Iniciar Chat en WhatsApp
+                Contactar con un Asesor
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Solicitar Soporte Técnico
+            </a>
+            <a href="https://wa.me/593999774777" target="_blank"
+                class="block mt-3 text-center bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Atención al Cliente
             </a>
         </div>
 
         <!-- Botón con el astronauta -->
         <button onclick="toggleChat()" class="focus:outline-none m-0 p-0">
-            <img src="img/PERSY.gif" alt="WhatsApp Astronauta" style="width: 250px; height: auto;"
+            <img src="img/ANIMACION PERSI HELLO (1).gif" alt="WhatsApp Astronauta" style="width: 75px; height: auto;"
                 class="drop-shadow-xl hover:scale-110 transition-transform duration-300" />
         </button>
     </div>

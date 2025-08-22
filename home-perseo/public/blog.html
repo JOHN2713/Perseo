@@ -49,75 +49,84 @@
     <!-- ✅ CONTENIDO -->
     <main class="pt-6 px-4">
         <section id="blog" class="max-w-7xl mx-auto py-16 px-6">
-            <!-- Título principal -->
+            <!-- Título -->
             <h2 class="text-4xl font-extrabold text-blue-700 text-center mb-4">Últimos artículos del blog</h2>
             <p class="text-center text-gray-600 mb-12">Información útil para llevar tu gestión contable al siguiente
                 nivel.</p>
 
-            <!-- Grid de artículos -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                <!-- Artículo 1 -->
-                <div class="bg-white shadow rounded-lg overflow-hidden">
-                    <img src="img/blog1.webp" alt="Imagen blog 1" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-bold text-blue-700 mb-2">¿Cómo automatizar tus declaraciones mensuales
-                            con Perseo?</h3>
-                        <p class="text-sm text-gray-600 mb-4">Descubre paso a paso cómo simplificar tus obligaciones
-                            fiscales usando nuestra plataforma contable.</p>
-                        <button onclick="abrirModalBlog('modal1')"
-                            class="text-orange-500 font-semibold hover:underline">Leer más</button>
+            <!-- Grid principal con contenido y sidebar -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+
+                <!-- Artículos (3/4 de ancho) -->
+                <div class="lg:col-span-3 space-y-6">
+                    <!-- Artículo 1 -->
+                    <div class="bg-white shadow rounded-lg overflow-hidden">
+                        <img src="img/blog1.webp" alt="Imagen blog 1" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-blue-700 mb-2">¿Cómo automatizar tus declaraciones
+                                mensuales con Perseo?</h3>
+                            <p class="text-sm text-gray-600 mb-4">Descubre paso a paso cómo simplificar tus obligaciones
+                                fiscales usando nuestra plataforma contable.</p>
+                            <button onclick="abrirModalBlog('modal1')"
+                                class="text-orange-500 font-semibold hover:underline">Leer más</button>
+                        </div>
+                    </div>
+
+                    <!-- Artículo 2 -->
+                    <div class="bg-white shadow rounded-lg overflow-hidden">
+                        <img src="img/blog2.webp" alt="Imagen blog 2" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-blue-700 mb-2">Tips para organizar tus cuentas por pagar y
+                                cobrar</h3>
+                            <p class="text-sm text-gray-600 mb-4">Lleva el control financiero con claridad y evita
+                                errores comunes en tu flujo de caja.</p>
+                            <button onclick="abrirModalBlog('modal2')"
+                                class="text-orange-500 font-semibold hover:underline">Leer más</button>
+                        </div>
+                    </div>
+
+                    <!-- Artículo 3 -->
+                    <div class="bg-white shadow rounded-lg overflow-hidden">
+                        <img src="img/blog3.webp" alt="Imagen blog 3" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-blue-700 mb-2">Errores frecuentes al emitir facturas
+                                electrónicas</h3>
+                            <p class="text-sm text-gray-600 mb-4">Evita sanciones del SRI con esta guía práctica para
+                                facturar correctamente.</p>
+                            <button onclick="abrirModalBlog('modal3')"
+                                class="text-orange-500 font-semibold hover:underline">Leer más</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Artículo 2 -->
-                <div class="bg-white shadow rounded-lg overflow-hidden">
-                    <img src="img/blog2.webp" alt="Imagen blog 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-bold text-blue-700 mb-2">Tips para organizar tus cuentas por pagar y
-                            cobrar</h3>
-                        <p class="text-sm text-gray-600 mb-4">Lleva el control financiero con claridad y evita errores
-                            comunes en tu flujo de caja.</p>
-                        <button onclick="abrirModalBlog('modal2')"
-                            class="text-orange-500 font-semibold hover:underline">Leer más</button>
+                <!-- Sidebar fijo (1/4 de ancho) -->
+                <aside class="hidden lg:block sticky top-24 h-max space-y-10">
+                    <!-- Categorías -->
+                    <div>
+                        <h4 class="text-xl font-bold text-blue-700 mb-2">Categorías</h4>
+                        <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                            <li>Declaraciones</li>
+                            <li>Contabilidad</li>
+                            <li>Facturación Electrónica</li>
+                            <li>Gestión Financiera</li>
+                        </ul>
                     </div>
-                </div>
 
-                <!-- Artículo 3 -->
-                <div class="bg-white shadow rounded-lg overflow-hidden">
-                    <img src="img/blog3.webp" alt="Imagen blog 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-bold text-blue-700 mb-2">Errores frecuentes al emitir facturas
-                            electrónicas</h3>
-                        <p class="text-sm text-gray-600 mb-4">Evita sanciones del SRI con esta guía práctica para
-                            facturar correctamente.</p>
-                        <button onclick="abrirModalBlog('modal3')"
-                            class="text-orange-500 font-semibold hover:underline">Leer más</button>
+                    <!-- Palabras clave -->
+                    <div>
+                        <h4 class="text-xl font-bold text-blue-700 mb-2">Palabras clave</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#SRI</span>
+                            <span
+                                class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#contabilidad</span>
+                            <span
+                                class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#automatización</span>
+                            <span
+                                class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#facturación</span>
+                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#finanzas</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Categorías y palabras clave -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <div>
-                    <h4 class="text-xl font-bold text-blue-700 mb-2">Categorías</h4>
-                    <ul class="list-disc ml-6 text-gray-700 space-y-1">
-                        <li>Declaraciones</li>
-                        <li>Contabilidad</li>
-                        <li>Facturación Electrónica</li>
-                        <li>Gestión Financiera</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-xl font-bold text-blue-700 mb-2">Palabras clave</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#SRI</span>
-                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#contabilidad</span>
-                        <span
-                            class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#automatización</span>
-                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#facturación</span>
-                        <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">#finanzas</span>
-                    </div>
-                </div>
+                </aside>
             </div>
 
             <!-- Sección de PERSEONAUTAS (solo visible en escritorio) -->

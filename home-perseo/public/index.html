@@ -53,11 +53,15 @@
             position: fixed;
             transform: translate(-50%, -50%);
         }
+        .bg-black-500 {
+            background-color: #e1e0e0;
+            /* Tailwind's gray-500 */
+        }
     </style>
 
 </head>
 
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans">
 
     <!-- ✅ NAV -->
     <header id="main-header" class="sticky top-0 z-50 bg-black text-white shadow-md transition-all duration-300">
@@ -97,8 +101,8 @@
 
     <!-- ✅ SLIDER COVERFLOW -->
     <section class="bg-[#072fcb] text-black py-12">
-        <h2 class="text-3xl font-bold mb-0 text-center mb-7">Nuevas Funcionalidades </h2>
-        <p class="text-center text-lg mb-0">Descubre las últimas mejoras y características de PERSEO</p>
+        <h2 class="text-5xl font-bold mb-0 text-center mb-7">Nuevas Funcionalidades </h2>
+        <p class="text-center text-lg mb-0">Descubre las últimas mejoras y eventos de PERSEO</p>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="img/01.webp" alt="Slide 1" /></div>
@@ -115,7 +119,7 @@
     </section>
 
     <!-- ✅ PLANES PERSEO (Monocromático con logo arriba) -->
-    <section id="planes" class="py-1 px-6 bg-white">
+    <section id="planes" class="py-1 px-6 bg-gray-100">
         <div class="max-w-6xl mx-auto text-center">
             <h1 class="text-5xl font-bold mb-12 text-gray-800">Planes PERSEO</h1>
 
@@ -185,7 +189,7 @@
     <section class="relative py-20 px-6 bg-cover bg-center bg-no-repeat"
         style="background-image: url('img/FONDO-SIN-OPACIDAD.webp');">
         <!-- Capa de opacidad sobre la imagen -->
-        <div class="absolute inset-0 bg-white opacity-50"></div>
+        <div class="absolute inset-0 bg-gray-100 opacity-50"></div>
 
         <!-- Contenido alineado a la izquierda -->
         <div class="relative z-10 max-w-5xl mx-auto text-left">

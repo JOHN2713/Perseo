@@ -6,6 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opción Contadores</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para la página activa */
+        .active-page {
+            color: #60A5FA;
+            position: relative;
+        }
+
+        .active-page::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #60A5FA;
+            animation: slideIn 0.3s ease-in-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Efecto hover mejorado */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #60A5FA;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::before {
+            transform: scaleX(1);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800 font-sans">
@@ -28,7 +78,11 @@
                 <a href="planes.html" class="hover:text-yellow-400">Nuestros Planes</a>
                 <a href="contadores.html" class="hover:text-blue-400">Opción Contadores</a>
                 <a href="atencion-cliente.html" class="hover:text-blue-400">Atención al Cliente</a>
-                <a href="blog.html" class="hover:text-blue-400">Blog</a>
+                <a href="blog.html" class="nav-link hover:text-blue-400 relative group">
+                    Blog
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span class="absolute -left-2 -right-2 h-full bg-blue-50 transform scale-y-0 transition-transform duration-300 -z-10 group-hover:scale-y-100"></span>
+                </a>
                 <a href="simulador.html" class="hover:text-blue-400">Simulador</a>
                 <a href="#" class="bg-blue-600 px-3 py-1 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
             </nav>
@@ -40,7 +94,8 @@
             <a href="planes.html" class="block hover:text-blue-400">📊 Nuestros Planes</a>
             <a href="contadores.html" class="block hover:text-blue-400">🧾 Opción Contadores</a>
             <a href="atencion-cliente.html" class="block hover:text-blue-400">👨🏻‍💻 Atención al Cliente</a>
-            <a href="blog.html" class="block hover:text-blue-400">📄 Blog</a>
+            <a href="blog.html" class="block hover:text-blue-400 bg-blue-900/20 border-l-4 border-blue-400 pl-3">📄
+                Blog</a>
             <a href="simulador.html" class="block hover:text-blue-400">🎯 Simulador</a>
             <a href="#" class="block bg-blue-600 text-center py-2 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
         </div>
@@ -181,6 +236,7 @@
                 document.getElementById(id).classList.remove("hidden");
                 document.getElementById(id).classList.add("flex");
             }
+
             function cerrarModalBlog(id) {
                 document.getElementById(id).classList.remove("flex");
                 document.getElementById(id).classList.add("hidden");
@@ -319,6 +375,28 @@
             const bubble = document.getElementById('chat-bubble');
             bubble.classList.toggle('hidden');
         }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener la ruta actual
+            const currentPath = window.location.pathname;
+            
+            // Encontrar todos los enlaces del menú
+            const menuLinks = document.querySelectorAll('nav a');
+            
+            menuLinks.forEach(link => {
+                // Si el href del enlace coincide con la ruta actual
+                if(link.getAttribute('href') === currentPath.split('/').pop()) {
+                    link.classList.add('active-page');
+                    // Agregar clase especial para el menú móvil
+                    const mobilePath = currentPath.split('/').pop();
+                    const mobileLink = document.querySelector(`#mobile-menu a[href="${mobilePath}"]`);
+                    if(mobileLink) {
+                        mobileLink.classList.add('bg-blue-900/20', 'border-l-4', 'border-blue-400');
+                    }
+                }
+            });
+        });
     </script>
 </body>
 

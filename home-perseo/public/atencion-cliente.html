@@ -121,7 +121,8 @@
 
                 <ul id="faq-list" class="space-y-4">
                     <li class="faq-item">
-                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                        <div
+                            class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
                             <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cómo generar anticipos a proveedores?</h4>
                             <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
                                 Para ingresar un anticipo a un proveedor en PerseoWeb:<br>
@@ -134,8 +135,10 @@
                         </div>
                     </li>
                     <li class="faq-item">
-                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cómo registrar una compra y relacionarla con anticipo?</h4>
+                        <div
+                            class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cómo registrar una compra y relacionarla
+                                con anticipo?</h4>
                             <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
                                 Pasos para registrar y relacionar:<br>
                                 1. Colocar el mismo proveedor<br>
@@ -150,8 +153,10 @@
 
                     <!-- Preguntas ocultas inicialmente -->
                     <li class="faq-item hidden">
-                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Dónde se pueden cambiar los precios en la sección de tarifas?</h4>
+                        <div
+                            class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Dónde se pueden cambiar los precios en la
+                                sección de tarifas?</h4>
                             <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
                                 Para modificar precios en la sección de tarifas:<br>
                                 1. Ir al módulo de compras<br>
@@ -166,23 +171,29 @@
 
                     <!-- Nueva pregunta oculta -->
                     <li class="faq-item hidden">
-                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cuentan con una aplicación de facturación electrónica?</h4>
+                        <div
+                            class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cuentan con una aplicación de facturación
+                                electrónica?</h4>
                             <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
-                                Sí. Nuestra aplicación de facturación electrónica se llama Facturito, la cual te ofrece:<br>
+                                Sí. Nuestra aplicación de facturación electrónica se llama Facturito, la cual te
+                                ofrece:<br>
                                 • Facturas ilimitadas por un pago anual<br>
                                 • Firma electrónica integrada<br>
                                 • Envío automático al SRI<br>
                                 • Notificaciones por email<br>
-                                <a href="#" class="text-blue-600 underline mt-2 inline-block">Conocer más sobre Facturito</a>
+                                <a href="#" class="text-blue-600 underline mt-2 inline-block">Conocer más sobre
+                                    Facturito</a>
                             </p>
                         </div>
                     </li>
 
                     <!-- Nueva pregunta sobre eliminar relación entre anticipo y compra -->
                     <li class="faq-item hidden">
-                        <div class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cómo se elimina la relación entre un anticipo y una compra en PerseoWeb?</h4>
+                        <div
+                            class="flex flex-col md:flex-row md:items-start md:space-x-6 p-4 hover:bg-gray-50 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 md:w-1/3">¿Cómo se elimina la relación entre un
+                                anticipo y una compra en PerseoWeb?</h4>
                             <p class="text-gray-600 text-sm mt-2 md:mt-0 md:w-2/3">
                                 Para eliminar la relación entre un anticipo y una compra:<br>
                                 1. Dirigirse a la opción "Relacionar anticipos"<br>
@@ -199,7 +210,7 @@
         </section>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 // Función para mostrar solo las preguntas principales
                 function mostrarPreguntasPrincipales() {
                     document.querySelectorAll('.faq-item').forEach((item, index) => {
@@ -214,9 +225,9 @@
                 // Mostrar preguntas principales al cargar
                 mostrarPreguntasPrincipales();
 
-                document.getElementById('faq-search').addEventListener('input', function() {
+                document.getElementById('faq-search').addEventListener('input', function () {
                     const query = this.value.toLowerCase().trim();
-                    
+
                     // Si el buscador está vacío, mostrar solo las preguntas principales
                     if (query === '') {
                         mostrarPreguntasPrincipales();
@@ -234,10 +245,10 @@
                     document.querySelectorAll('.faq-item').forEach(item => {
                         const pregunta = item.querySelector('h4').textContent.toLowerCase();
                         const respuesta = item.querySelector('p').textContent.toLowerCase();
-                        
+
                         // Buscar coincidencias directas
                         let matches = pregunta.includes(query) || respuesta.includes(query);
-                        
+
                         // Buscar coincidencias por palabras clave
                         if (!matches) {
                             for (let category in keywords) {
@@ -275,32 +286,32 @@
                 </p>
                 <div class="flex justify-center md:justify-start gap-3 mt-2">
                     <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg"
-                            alt="Facebook" class="h-5 w-5"></a>
+                            alt="Facebook" class="h-5 w-5 invert"></a>
                     <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg"
-                            alt="Instagram" class="h-5 w-5"></a>
+                            alt="Instagram" class="h-5 w-5 invert"></a>
                     <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter"
-                            class="h-5 w-5"></a>
+                            class="h-5 w-5 invert"></a>
                     <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube"
-                            class="h-5 w-5"></a>
+                            class="h-5 w-5 invert"></a>
                 </div>
             </div>
 
             <!-- Columna 2: Descarga app y links -->
-            <div class="flex flex-col items-center md:items-start">
-                <p class="font-semibold mb-2">Descarga Nuestra Aplicación Móvil</p>
-                <div class="flex justify-center gap-2 mb-4">
+            <div class="flex flex-col items-center justify-center md:items-center space-y-4">
+                <p class="font-semibold">Descarga Nuestra Aplicación Móvil</p>
+                <div class="flex flex-col sm:flex-row items-center gap-4">
                     <a href="#"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                            alt="Google Play" class="h-9"></a>
+                            alt="Google Play" class="h-10"></a>
                     <a href="#"><img
                             src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                            alt="App Store" class="h-9"></a>
+                            alt="App Store" class="h-10"></a>
                 </div>
-                <div class="flex justify-center flex-wrap gap-4 text-sm text-white/90">
-                    <a href="#" class="hover:underline">Nuestros Planes</a>
-                    <a href="#" class="hover:underline">Blog</a>
-                    <a href="#" class="hover:underline">Atención al Cliente</a>
-                    <a href="#" class="hover:underline">Simulador</a>
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-white/90">
+                    <a href="planes.html" class="hover:underline">Nuestros Planes</a>
+                    <a href="blog.html" class="hover:underline">Blog</a>
+                    <a href="atencion-cliente.html" class="hover:underline">Atención al Cliente</a>
+                    <a href="simulador.html" class="hover:underline">Simulador</a>
                 </div>
             </div>
 
@@ -316,7 +327,7 @@
 
         <!-- Línea inferior -->
         <div class="text-center text-xs text-white/80 mt-8">
-            <p>Copyright © 2024 PerseoSoft. Todos los Derechos Reservados.</p>
+            <p>Copyright © 2025 PerseoSoft. Todos los Derechos Reservados.</p>
             <a href="#" class="underline hover:text-white">Política de Privacidad</a>
         </div>
     </footer>

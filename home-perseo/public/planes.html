@@ -189,8 +189,10 @@
                 <a href="index.html" class="hover:text-blue-400">Inicio</a>
                 <a href="planes.html" class="nav-link hover:text-blue-400 relative group">
                     Nuestros Planes
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                    <span class="absolute -left-2 -right-2 h-full bg-blue-50 transform scale-y-0 transition-transform duration-300 -z-10 group-hover:scale-y-100"></span>
+                    <span
+                        class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span
+                        class="absolute -left-2 -right-2 h-full bg-blue-50 transform scale-y-0 transition-transform duration-300 -z-10 group-hover:scale-y-100"></span>
                 </a>
                 <a href="contadores.html" class="hover:text-blue-400">Opción Contadores</a>
                 <a href="atencion-cliente.html" class="hover:text-blue-400">Atención al Cliente</a>
@@ -1128,6 +1130,212 @@
                 </div>
             </div>
         </section>
+        <section class="max-w-7xl mx-auto px-4 py-8">
+            <div class="bg-white shadow-md rounded-xl overflow-hidden">
+                <h3 class="bg-orange-500 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Módulo Restaurantes
+                </h3>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full table-auto text-sm text-center">
+                        <thead class="bg-orange-500 text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Detalle</th>
+                                <th class="px-4 py-2">Facturación</th>
+                                <th class="px-4 py-2">Control</th>
+                                <th class="px-4 py-2">Comercial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Transacciones Bancarias y de Caja</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Gestión efectivo, TC, Cheques, Ch. Posfechados,
+                                    Depósitos</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                        </tbody>
+                        <tbody id="restaurante-pc-extendido" class="hidden">
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Liquidación de tarjetas de crédito</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Conciliación Bancaria</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center py-4">
+                    <button
+                        onclick="document.getElementById('restaurante-pc-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                        class="text-black-600 font-semibold hover:underline transition">Ver más</button>
+                </div>
+            </div>
+        </section>
+        <section class="max-w-7xl mx-auto px-4 py-8">
+            <div class="bg-white shadow-md rounded-xl overflow-hidden">
+                <h3 class="bg-orange-500 text-white px-6 py-3 text-xl font-semibold rounded-t-xl">Aplicación Perseo
+                    Móvil</h3>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full table-auto text-sm text-center">
+                        <thead class="bg-orange-500 text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Detalle</th>
+                                <th class="px-4 py-2">Facturación</th>
+                                <th class="px-4 py-2">Control</th>
+                                <th class="px-4 py-2">Comercial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Gestión de Reportes en vivo</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Gestión de Productos</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                        </tbody>
+                        <tbody id="movil-pc-extendido" class="hidden">
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Gestión de inventarios</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Facturador por voz</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-4 py-2 text-left">Sincronizado 100% con Perseo PC Offline</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                                <td class="text-orange-500 font-bold">SI</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center py-4">
+                    <button
+                        onclick="document.getElementById('movil-pc-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
+                        class="text-black-600 font-semibold hover:underline transition">Ver más</button>
+                </div>
+            </div>
+            <!-- Módulos adicionales para Planes PC -->
+            <section id="modulos-pc" class="max-w-7xl mx-auto py-16 px-6">
+                <h2 class="text-3xl font-extrabold text-orange-600 mb-8 text-center">Módulos adicionales para Planes PC
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <!-- Módulo Perseo Send -->
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2">Aplicación Perseo Send</h3>
+                        <ul class="text-gray-700 text-sm space-y-1">
+                            <li class="flex items-start gap-2">🚀 Permite enviar difusiones masivas por Whatsapp a sus clientes o base externa en Excel</li>
+                            <li class="flex items-start gap-2">🚀 Envío de texto, imágenes, catálogos y archivos PDF</li>
+                            <li class="flex items-start gap-2">🚀 Envío automatizado de mensajes de cobranza</li>
+                        </ul>
+                        <p class="text-sm mt-4 text-gray-600"><strong>Renta anual:</strong> $200.00</p>
+                    </div>
+
+                    <!-- Módulo Perseo Ventas -->
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2">Aplicación Perseo Ventas</h3>
+                        <ul class="text-gray-700 text-sm space-y-1">
+                            <li class="flex items-start gap-2">🚀 Facturación, proformas, pedidos, clientes, productos,
+                                stock, precios, cobros</li>
+                            <li class="flex items-start gap-2">🚀 Geolocalización de clientes y vendedores</li>
+                            <li class="flex items-start gap-2">🚀 Mapas con rutas y visitas realizadas</li>
+                            <li class="flex items-start gap-2">🚀 Impresión por Bluetooth o envío por WhatsApp</li>
+                            <li class="flex items-start gap-2">🚀 Funciona sin conexión, sincronización 100% con Perseo
+                                PC</li>
+                        </ul>
+                        <p class="text-sm mt-4 text-gray-600"><strong>Renta anual:</strong> $120.00</p>
+                    </div>
+
+                    <!-- Módulo Ecommerce -->
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2">Ecommerce - Tienda Online</h3>
+                        <ul class="text-gray-700 text-sm space-y-1">
+                            <li class="flex items-start gap-2">🚀 Sincronizado con Perseo PC (productos, precios, fotos,
+                                pedidos)</li>
+                            <li class="flex items-start gap-2">🚀 Experiencia de compra moderna y efectiva</li>
+                            <li class="flex items-start gap-2">🚀 Diseño responsive para móviles</li>
+                            <li class="flex items-start gap-2">🚀 Botón de pago y chatbots integrables</li>
+                            <li class="flex items-start gap-2">🚀 Personalizable con logos y condiciones de tu empresa
+                            </li>
+                        </ul>
+                        <p class="text-sm mt-4 text-gray-600"><strong>Renta anual:</strong> $100.00 <span
+                                class="italic">(Gratis en sistema Prime)</span></p>
+                    </div>
+
+                    <!-- Módulo Woocommerce -->
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2">Plugin Woocommerce de Wordpress</h3>
+                        <ul class="text-gray-700 text-sm space-y-1">
+                            <li class="flex items-start gap-2">🚀 Conecta tu tienda Woocommerce con Perseo PC</li>
+                            <li class="flex items-start gap-2">🚀 Sincroniza productos, precios, fotos, clientes</li>
+                            <li class="flex items-start gap-2">🚀 Recibe clientes y pedidos en tu sistema Perseo</li>
+                        </ul>
+                        <p class="text-sm mt-4 text-gray-600"><strong>Renta anual:</strong> $300.00</p>
+                    </div>
+
+                    <!-- Módulo Power BI -->
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2">Conexión API con Power BI</h3>
+                        <ul class="text-gray-700 text-sm space-y-1">
+                            <li class="flex items-start gap-2">🚀 Visualización gerencial a través de Power BI</li>
+                            <li class="flex items-start gap-2">🚀 API para conexión directa</li>
+                            <li class="flex items-start gap-2">🚀 Requiere dominio y certificado SSL</li>
+                        </ul>
+                        <p class="text-sm mt-4 text-gray-600"><strong>Renta anual:</strong> $120.00</p>
+                    </div>
+
+                    <!-- Módulo Garantías -->
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2">Garantías y Servicio Técnico</h3>
+                        <ul class="text-gray-700 text-sm space-y-1">
+                            <li class="flex items-start gap-2">🚀 Gestión completa de garantías</li>
+                            <li class="flex items-start gap-2">🚀 Impresión, seguimiento y asignación por técnico</li>
+                            <li class="flex items-start gap-2">🚀 Control de repuestos</li>
+                        </ul>
+                        <p class="text-sm mt-4 text-gray-600"><strong>Renta anual:</strong> $120.00</p>
+                    </div>
+
+                    <!-- Módulo Talleres Automotrices -->
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg shadow">
+                        <h3 class="text-2xl font-bold text-orange-700 mb-2">Talleres Automotrices</h3>
+                        <ul class="text-gray-700 text-sm space-y-1">
+                            <li class="flex items-start gap-2">🚀 Recepción de vehículos y órdenes de trabajo</li>
+                            <li class="flex items-start gap-2">🚀 Gestión por cliente y vehículo</li>
+                            <li class="flex items-start gap-2">🚀 Historial de mantenimiento</li>
+                        </ul>
+                        <p class="text-sm mt-4 text-gray-600"><strong>Renta anual:</strong> $120.00</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </section>
     </section>
 
     <!-- Planes Web -->
@@ -1928,6 +2136,121 @@
                     <button
                         onclick="document.getElementById('produccion-extendido').classList.toggle('hidden'); this.textContent = this.textContent === 'Ver menos' ? 'Ver más' : 'Ver menos';"
                         class="text-blue-600 font-semibold hover:underline transition">Ver más</button>
+                </div>
+            </div>
+        </section>
+        <section id="modulos-web" class="max-w-7xl mx-auto py-16 px-6">
+            <h2 class="text-4xl font-extrabold text-center text-blue-700 mb-4">Módulos adicionales para Planes Web</h2>
+            <p class="text-center text-gray-600 mb-12">Extiende la funcionalidad de Perseo Web con estos módulos
+                opcionales, integrados 100% al sistema.</p>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg shadow">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="w-8 h-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 30">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-blue-700">Tienda Online - Ecommerce 100% integrada</h3>
+                    </div>
+                    <ul class="text-gray-700 text-sm space-y-1 ml-2">
+                        <li class="flex items-start gap-2"><span>🚀</span>Sincroniza a la Tienda de Productos, precios,
+                            Fotos, Clientes</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Tus clientes hacen pedidos o compras desde la
+                            tienda</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Permite incorporar botón de pago si se lo
+                            requiere</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Permite vender a C. Final o a Mayoristas con
+                            su precio</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Clientes se registran por Facebook o con
+                            claves propias</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Super parametrizable con logos y colores de tu
+                            empresa</li>
+                    </ul>
+                    <p class="text-sm text-gray-600 mt-4"><strong>Costo:</strong> Mensual o Anual</p>
+                    <p class="text-sm italic text-gray-500">*Aplica solo para el Plan Comercial</p>
+                </div>
+
+
+                <!-- Móvil -->
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg shadow">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="w-6 h-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-blue-700">Aplicación Perseo Móvil</h3>
+                    </div>
+                    <ul class="text-gray-700 text-sm space-y-1 ml-2">
+                        <li class="flex items-start gap-2"><span>🚀</span>Gestín de reportes en vivo</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Gestín de productos</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Inventarios: entradas, salidas, transferencias
+                        </li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Facturador por voz</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Sincronizado con tu Plan Perseo Web</li>
+                    </ul>
+                    <p class="text-sm italic text-gray-500 mt-2">*Aplica para todos los planes</p>
+                </div>
+
+
+                <!-- Talleres -->
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg shadow">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="w-6 h-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linejoin="round" stroke-width="2"
+                                d="M7.582 8.96 9.814 11.192l-1.618 1.618c-1.083-.181-2.236.145-3.074.983-1.12 1.12-1.327 2.807-.624 4.136.148.281.421.474.735.521.067.01.135.013.201.01a.74.74 0 0 0 .01.201c.047.314.241.587.521.735 1.33.704 3.016.498 4.137-.623.838-.837 1.164-1.99.983-3.074l4.811-4.81c1.083.18 2.236-.145 3.073-.983 1.121-1.12 1.327-2.806.624-4.136a.936.936 0 0 0-.735-.521.741.741 0 0 0-.201.01.74.74 0 0 0-.01-.201.936.936 0 0 0-.521-.735c-1.33-.703-3.016-.497-4.136.624-.838.837-1.164 1.99-.983 3.073l-1.779 1.78-2.232-2.232-1.414 1.414Z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-blue-700">Talleres Automotrices</h3>
+                    </div>
+                    <ul class="text-gray-700 text-sm space-y-1 ml-2">
+                        <li class="flex items-start gap-2"><span>🚀</span>Recepción de vehículos y órdenes de trabajo
+                        </li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Historial por cliente y vehículo</li>
+                    </ul>
+                    <p class="text-sm italic text-gray-500 mt-2">*Aplica para el Plan Comercial</p>
+                </div>
+
+
+                <!-- Garantías -->
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg shadow">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="w-6 h-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 7h1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h11.5M7 14h6m-6 3h6m0-10h.5m-.5 3h.5M7 7h3v3H7V7Z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-blue-700">Gestón de Garantías</h3>
+                    </div>
+                    <ul class="text-gray-700 text-sm space-y-1 ml-2">
+                        <li class="flex items-start gap-2"><span>🚀</span>Recepción de garantías e impresiones</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Asignación por técnico</li>
+                    </ul>
+                    <p class="text-sm italic text-gray-500 mt-2">*Aplica para el Plan Comercial</p>
+                </div>
+
+
+                <!-- Woocommerce -->
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg shadow md:col-span-2">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="w-6 h-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m10.051 8.102-3.778.322-1.994 1.994a.94.94 0 0 0 .533 1.6l2.698.316m8.39 1.617-.322 3.78-1.994 1.994a.94.94 0 0 1-1.595-.533l-.4-2.652m8.166-11.174a1.366 1.366 0 0 0-1.12-1.12c-1.616-.279-4.906-.623-6.38.853-1.671 1.672-5.211 8.015-6.31 10.023a.932.932 0 0 0 .162 1.111l.828.835.833.832a.932.932 0 0 0 1.111.163c2.008-1.102 8.35-4.642 10.021-6.312 1.475-1.478 1.133-4.77.855-6.385Zm-2.961 3.722a1.88 1.88 0 1 1-3.76 0 1.88 1.88 0 0 1 3.76 0Z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-blue-700">Plugin Woocommerce para Wordpress</h3>
+                    </div>
+                    <ul class="text-gray-700 text-sm space-y-1 ml-2">
+                        <li class="flex items-start gap-2"><span>🚀</span>Conecta Woocommerce con Perseo</li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Sincroniza productos, precios, fotos, clientes
+                        </li>
+                        <li class="flex items-start gap-2"><span>🚀</span>Importa pedidos y nuevos clientes</li>
+                    </ul>
+                    <p class="text-sm italic text-gray-500 mt-2">*Aplica para el Plan Comercial</p>
                 </div>
             </div>
         </section>

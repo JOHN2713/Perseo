@@ -60,11 +60,11 @@
         /* Estilos actualizados para la Ruleta */
         .ruleta-section {
             background: linear-gradient(135deg, #60A5FA 0%, #1E40AF 100%);
-            margin-top: 4rem;
-            padding: 4rem 0;
+            padding: 2rem;
             color: white;
             position: relative;
             overflow: hidden;
+            margin: 0;
         }
 
         .ruleta-container {
@@ -201,6 +201,29 @@
                 top: 0;
             }
         }
+
+        /* Agregar en la sección de estilos */
+        .ruleta-modal-open {
+            overflow: hidden;
+        }
+
+        #ruleta-modal {
+            transition: opacity 0.3s ease;
+        }
+
+        #ruleta-modal.fade-in {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
     </style>
     </style>
 </head>
@@ -284,63 +307,16 @@
                 El simulador funciona mejor en pantallas grandes para una experiencia completa.
             </p>
         </section>
-        <!-- SECCIÓN RULETA DE DESCUENTO -->
-        <section class="ruleta-section">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-white text-center mb-8 animate-pulse">
-                🎯 GANA TU DESCUENTO 🎯
-            </h2>
 
-            <div class="ruleta-container px-6">
-                <!-- Contenedor izquierdo: Ruleta y botón -->
-                <div class="flex flex-col items-center">
-                    <div class="number-display">
-                        <div id="percentage" class="percentage">0%</div>
-                    </div>
-
-                    <button onclick="spinWheel()" id="spinButton" 
-                            class="bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 
-                                   text-white py-4 px-10 rounded-full font-bold uppercase tracking-wider text-xl 
-                                   shadow-lg transition disabled:bg-gray-400 mt-6">
-                        ¡Girar Ruleta!
-                    </button>
-
-                    <div id="result" 
-                         class="text-white text-2xl mt-6 font-bold min-h-[60px] flex justify-center items-center">
-                    </div>
-
-                    <!-- Nuevo mensaje con enlace de WhatsApp -->
-                    <div class="text-white/80 text-xs mt-4 max-w-md text-center">
-                        <p class="mb-2">Toma una captura de tu descuento y preséntalo al momento de hablar con uno de nuestros asesores para que puedas aplicar al descuento</p>
-                        <a href="https://wa.me/593999774777?text=Hola,%20obtuve%20un%20descuento%20en%20la%20ruleta%20de%20Perseo" 
-                           target="_blank"
-                           class="inline-flex items-center gap-2 text-yellow-300 hover:text-yellow-200 transition-colors">
-                            <span>Da clic aquí para contactar a un asesor</span>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0a12 12 0 1 1 0 24 12 12 0 0 1 0-24zm3.186 7.874-4.818 4.818-1.354-1.354a.5.5 0 0 0-.707.707l1.707 1.707a.5.5 0 0 0 .707 0l5.172-5.172a.5.5 0 1 0-.707-.707z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Panel derecho: Lista de descuentos -->
-                <div class="discount-panel">
-                    <h3 class="text-xl font-bold border-b border-white/20 pb-3 mb-4 text-center">
-                        Descuentos Disponibles
-                    </h3>
-                    <ul class="space-y-3">
-                        <li class="discount-item" data-value="3">3% de descuento</li>
-                        <li class="discount-item" data-value="5">5% de descuento</li>
-                        <li class="discount-item" data-value="8">8% de descuento</li>
-                        <li class="discount-item" data-value="10">10% de descuento</li>
-                        <li class="discount-item" data-value="12">12% de descuento</li>
-                        <li class="discount-item" data-value="15">15% de descuento</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Celebraciones -->
-            <div id="celebration"></div>
-        </section>
+        <!-- Botón para abrir la ruleta -->
+        <div class="text-center mb-16">
+            <button id="open-ruleta" 
+                    class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 
+                           text-white px-8 py-3 rounded-full font-bold text-lg 
+                           shadow-lg transition transform hover:scale-105 animate-pulse">
+                🎯 Aplica a tu Descuento 🎯
+            </button>
+        </div>
     </main>
 
     <!-- ✅ FOOTER PERSEO -->
@@ -593,6 +569,113 @@
 
             setTimeout(() => celebration.innerHTML = '', 4000);
         }
+    </script>
+
+    <!-- Agregar al final del body, antes de los scripts -->
+    <div id="ruleta-modal" 
+         class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center p-4">
+        <!-- Contenedor del modal -->
+        <div class="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto relative">
+            <!-- Botón cerrar -->
+            <button id="close-ruleta" 
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <!-- Contenido de la ruleta -->
+            <section class="ruleta-section rounded-2xl">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white text-center mb-8 animate-pulse">
+                    🎯 GANA TU DESCUENTO 🎯
+                </h2>
+
+                <div class="ruleta-container px-6">
+                    <!-- Contenedor izquierdo: Ruleta y botón -->
+                    <div class="flex flex-col items-center">
+                        <div class="number-display">
+                            <div id="percentage" class="percentage">0%</div>
+                        </div>
+
+                        <button onclick="spinWheel()" id="spinButton" 
+                                class="bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 
+                                       text-white py-4 px-10 rounded-full font-bold uppercase tracking-wider text-xl 
+                                       shadow-lg transition disabled:bg-gray-400 mt-6">
+                            ¡Girar Ruleta!
+                        </button>
+
+                        <div id="result" 
+                             class="text-white text-2xl mt-6 font-bold min-h-[60px] flex justify-center items-center">
+                        </div>
+
+                        <!-- Nuevo mensaje con enlace de WhatsApp -->
+                        <div class="text-white/80 text-xs mt-4 max-w-md text-center">
+                            <p class="mb-2">Toma una captura de tu descuento y preséntalo al momento de hablar con uno de nuestros asesores para que puedas aplicar al descuento</p>
+                            <a href="https://wa.me/593999774777?text=Hola,%20obtuve%20un%20descuento%20en%20la%20ruleta%20de%20Perseo" 
+                               target="_blank"
+                               class="inline-flex items-center gap-2 text-yellow-300 hover:text-yellow-200 transition-colors">
+                                <span>Da clic aquí para contactar a un asesor</span>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0a12 12 0 1 1 0 24 12 12 0 0 1 0-24zm3.186 7.874-4.818 4.818-1.354-1.354a.5.5 0 0 0-.707.707l1.707 1.707a.5.5 0 0 0 .707 0l5.172-5.172a.5.5 0 1 0-.707-.707z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Panel derecho: Lista de descuentos -->
+                    <div class="discount-panel">
+                        <h3 class="text-xl font-bold border-b border-white/20 pb-3 mb-4 text-center">
+                            Descuentos Disponibles
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="discount-item" data-value="3">3% de descuento</li>
+                            <li class="discount-item" data-value="5">5% de descuento</li>
+                            <li class="discount-item" data-value="8">8% de descuento</li>
+                            <li class="discount-item" data-value="10">10% de descuento</li>
+                            <li class="discount-item" data-value="12">12% de descuento</li>
+                            <li class="discount-item" data-value="15">15% de descuento</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Celebraciones -->
+                <div id="celebration"></div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('ruleta-modal');
+            const openButton = document.getElementById('open-ruleta');
+            const closeButton = document.getElementById('close-ruleta');
+
+            // Abrir modal
+            openButton.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('fade-in');
+                document.body.classList.add('ruleta-modal-open');
+            });
+
+            // Cerrar modal
+            closeButton.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('ruleta-modal-open');
+            });
+
+            // Cerrar al hacer clic fuera
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    document.body.classList.remove('ruleta-modal-open');
+                }
+            });
+
+            // Prevenir cierre al hacer clic dentro de la ruleta
+            modal.querySelector('.ruleta-section').addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
     </script>
 </body>
 

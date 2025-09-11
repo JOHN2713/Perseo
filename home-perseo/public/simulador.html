@@ -56,6 +56,152 @@
         .nav-link:hover::before {
             transform: scaleX(1);
         }
+
+        /* Estilos actualizados para la Ruleta */
+        .ruleta-section {
+            background: linear-gradient(135deg, #60A5FA 0%, #1E40AF 100%);
+            margin-top: 4rem;
+            padding: 4rem 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ruleta-container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .number-display {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px auto;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 800px;
+            transition: all 0.3s ease;
+        }
+
+        .percentage {
+            font-size: 12rem;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        /* Efectos de iluminación según el porcentaje */
+        .percentage[data-value="3"] {
+            text-shadow: 0 0 30px rgba(99, 102, 241, 0.7);
+        }
+
+        .percentage[data-value="5"] {
+            text-shadow: 0 0 40px rgba(129, 140, 248, 0.8);
+        }
+
+        .percentage[data-value="8"] {
+            text-shadow: 0 0 50px rgba(165, 180, 252, 0.9);
+        }
+
+        .percentage[data-value="10"] {
+            text-shadow: 0 0 60px rgba(199, 210, 254, 1);
+        }
+
+        .percentage[data-value="12"] {
+            text-shadow: 0 0 70px rgba(224, 231, 255, 1);
+        }
+
+        .percentage[data-value="15"] {
+            text-shadow: 0 0 80px rgba(255, 255, 255, 1);
+        }
+
+        .discount-item {
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .discount-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .discount-item.active {
+            background: linear-gradient(45deg, rgba(99, 102, 241, 0.8), rgba(165, 180, 252, 0.8));
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .discount-panel {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 2rem;
+            width: 300px;
+            align-self: start;
+        }
+
+        /* Animaciones mejoradas */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 50px rgba(99, 102, 241, 0.6);
+            }
+
+            100% {
+                box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+            }
+        }
+
+        .number-display.spinning {
+            animation: glow 1s infinite;
+        }
+
+        @media screen and (max-width: 768px) {
+            .percentage {
+                font-size: 8rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .percentage {
+                font-size: 6rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .ruleta-container {
+                grid-template-columns: 1fr;
+            }
+
+            .discount-panel {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
     </style>
 </head>
 
@@ -82,8 +228,10 @@
                 <a href="blog.html" class="hover:text-blue-400">Blog</a>
                 <a href="simulador.html" class="hover:text-blue-400 relative group">
                     Simulador
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                    <span class="absolute -left-2 -right-2 h-full bg-blue-50 transform scale-y-0 transition-transform duration-300 -z-10 group-hover:scale-y-100"></span>
+                    <span
+                        class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span
+                        class="absolute -left-2 -right-2 h-full bg-blue-50 transform scale-y-0 transition-transform duration-300 -z-10 group-hover:scale-y-100"></span>
                 </a>
                 <a href="#" class="bg-blue-600 px-3 py-1 rounded text-sm hover:bg-blue-700">Probar Gratis</a>
             </nav>
@@ -136,7 +284,63 @@
                 El simulador funciona mejor en pantallas grandes para una experiencia completa.
             </p>
         </section>
+        <!-- SECCIÓN RULETA DE DESCUENTO -->
+        <section class="ruleta-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white text-center mb-8 animate-pulse">
+                🎯 GANA TU DESCUENTO 🎯
+            </h2>
 
+            <div class="ruleta-container px-6">
+                <!-- Contenedor izquierdo: Ruleta y botón -->
+                <div class="flex flex-col items-center">
+                    <div class="number-display">
+                        <div id="percentage" class="percentage">0%</div>
+                    </div>
+
+                    <button onclick="spinWheel()" id="spinButton" 
+                            class="bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 
+                                   text-white py-4 px-10 rounded-full font-bold uppercase tracking-wider text-xl 
+                                   shadow-lg transition disabled:bg-gray-400 mt-6">
+                        ¡Girar Ruleta!
+                    </button>
+
+                    <div id="result" 
+                         class="text-white text-2xl mt-6 font-bold min-h-[60px] flex justify-center items-center">
+                    </div>
+
+                    <!-- Nuevo mensaje con enlace de WhatsApp -->
+                    <div class="text-white/80 text-xs mt-4 max-w-md text-center">
+                        <p class="mb-2">Toma una captura de tu descuento y preséntalo al momento de hablar con uno de nuestros asesores para que puedas aplicar al descuento</p>
+                        <a href="https://wa.me/593999774777?text=Hola,%20obtuve%20un%20descuento%20en%20la%20ruleta%20de%20Perseo" 
+                           target="_blank"
+                           class="inline-flex items-center gap-2 text-yellow-300 hover:text-yellow-200 transition-colors">
+                            <span>Da clic aquí para contactar a un asesor</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0a12 12 0 1 1 0 24 12 12 0 0 1 0-24zm3.186 7.874-4.818 4.818-1.354-1.354a.5.5 0 0 0-.707.707l1.707 1.707a.5.5 0 0 0 .707 0l5.172-5.172a.5.5 0 1 0-.707-.707z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Panel derecho: Lista de descuentos -->
+                <div class="discount-panel">
+                    <h3 class="text-xl font-bold border-b border-white/20 pb-3 mb-4 text-center">
+                        Descuentos Disponibles
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="discount-item" data-value="3">3% de descuento</li>
+                        <li class="discount-item" data-value="5">5% de descuento</li>
+                        <li class="discount-item" data-value="8">8% de descuento</li>
+                        <li class="discount-item" data-value="10">10% de descuento</li>
+                        <li class="discount-item" data-value="12">12% de descuento</li>
+                        <li class="discount-item" data-value="15">15% de descuento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Celebraciones -->
+            <div id="celebration"></div>
+        </section>
     </main>
 
     <!-- ✅ FOOTER PERSEO -->
@@ -285,6 +489,110 @@
                 }
             });
         });
+    </script>
+    <script>
+        let currentAttempt = 1;
+        let isSpinning = false;
+        const percentages = Array.from({ length: 15 }, (_, i) => i + 1);
+
+        function spinWheel() {
+            if (isSpinning) return;
+            isSpinning = true;
+
+            document.querySelectorAll('.discount-item').forEach(item => item.classList.remove('active'));
+
+            const button = document.getElementById('spinButton');
+            const percentageDisplay = document.getElementById('percentage');
+            button.disabled = true;
+            button.textContent = 'GIRANDO...';
+
+            let selectedPercentage;
+            const intervalDuration = 50;
+            const duration = 2000;
+
+            if (currentAttempt === 3) {
+                selectedPercentage = 15;
+            } else {
+                selectedPercentage = percentages[Math.floor(Math.random() * 14)];
+            }
+
+            let lastNumber = -1;
+            const intervalId = setInterval(() => {
+                let randomPercentage;
+                do {
+                    randomPercentage = percentages[Math.floor(Math.random() * percentages.length)];
+                } while (randomPercentage === lastNumber);
+                lastNumber = randomPercentage;
+                percentageDisplay.textContent = `${randomPercentage}%`;
+            }, intervalDuration);
+
+            setTimeout(() => {
+                clearInterval(intervalId);
+                const slowdown = setInterval(() => {
+                    let randomPercentage = percentages[Math.floor(Math.random() * percentages.length)];
+                    percentageDisplay.textContent = `${randomPercentage}%`;
+                }, 100);
+
+                setTimeout(() => {
+                    clearInterval(slowdown);
+                    percentageDisplay.textContent = `${selectedPercentage}%`;
+                    showResult(selectedPercentage);
+                    createCelebration();
+                    button.disabled = false;
+                    button.textContent = '¡Girar Ruleta!';
+                    isSpinning = false;
+                    currentAttempt++;
+                    if (currentAttempt > 3) {
+                        button.textContent = '¡Giros completado!';
+                        button.disabled = true;
+                    }
+                }, 300);
+            }, duration);
+        }
+
+        function showResult(percentage) {
+            const result = document.getElementById('result');
+            const percentageDisplay = document.getElementById('percentage');
+            const numberDisplay = document.querySelector('.number-display');
+            
+            // Actualizar atributo data-value para los efectos de iluminación
+            percentageDisplay.setAttribute('data-value', percentage);
+            
+            // Añadir efecto de iluminación al contenedor
+            numberDisplay.style.boxShadow = `0 0 ${percentage * 5}px rgba(99, 102, 241, ${percentage / 15})`;
+            
+            result.innerHTML = `🎉 ¡Ganaste un <span class="text-yellow-300 text-3xl">${percentage}%</span> de descuento en tu Plan Perseo Web! 🎉`;
+
+            // Actualizar el enlace de WhatsApp con el porcentaje ganado
+            const whatsappLink = document.querySelector('a[href^="https://wa.me"]');
+            whatsappLink.href = `https://wa.me/593999774777?text=Hola,%20obtuve%20un%20${percentage}%%20de%20descuento%20en%20la%20ruleta%20de%20Perseo`;
+
+            const discountItems = document.querySelectorAll('.discount-item');
+            discountItems.forEach(item => {
+                item.classList.remove('active');
+                if (parseInt(item.dataset.value) === percentage) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+
+        function createCelebration() {
+            const celebration = document.getElementById('celebration');
+            celebration.innerHTML = '';
+
+
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'absolute w-2 h-2 bg-yellow-300 animate-bounce';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = Math.random() * 100 + '%';
+                celebration.appendChild(confetti);
+            }
+
+
+            setTimeout(() => celebration.innerHTML = '', 4000);
+        }
     </script>
 </body>
 

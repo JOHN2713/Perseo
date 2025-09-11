@@ -171,6 +171,65 @@
         </div>
     </section>
 
+    <!-- ✅ HERO -->
+    <section class="relative py-20 px-6 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('img/FONDO-SIN-OPACIDAD.webp');">
+        <!-- Capa de opacidad sobre la imagen -->
+        <div class="absolute inset-0 bg-gray-100 opacity-50"></div>
+
+        <!-- Contenido alineado a la izquierda -->
+        <div class="relative z-10 max-w-5xl mx-auto text-left">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black drop-shadow-xl">
+                El Sistema Contable que impulsa tu negocio
+            </h1>
+            <p class="text-lg md:text-xl text-black/90 mb-8 max-w-xl">
+                Contamos con un software pensado para simplificar la administración y toma de decisiones en tu empresa o negocio, de forma rápida y eficaz.
+            </p>
+            <p class="text-lg md:text-xl text-black/90 mb-8 max-w-xl">
+                Con el fin de brindarte información útil que te permita optimizar tu gestión y cumplir con tus objetivos a corto y largo plazo.
+            </p>
+            <div class="flex gap-4 flex-wrap">
+                <button onclick="abrirModalDemoAhora()"
+                    class="border border-black text-black px-6 py-3 rounded hover:bg-black hover:text-white transition">
+                    Solicita una Demo
+                </button>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- MODAL PARA SOLICITAR UNA DEMO AHORA -->
+    <div id="modal-demo-ahora"
+        class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-lg relative">
+            <!-- Botón de cierre -->
+            <button onclick="cerrarModalDemoAhora()"
+                class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
+
+            <!-- Contenido del modal -->
+            <h2 class="text-2xl font-bold mb-2 text-center">Solicita una demo ahora</h2>
+            <p class="text-sm text-gray-600 text-center mb-6">Completa tus datos y nos contactaremos contigo</p>
+
+            <form action="https://tudominio.com/solicitar-demo" method="POST" class="space-y-4">
+                <input type="text" name="nombre" placeholder="Nombres y apellidos" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="email" name="correo" placeholder="Correo electrónico" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="text" name="empresa" placeholder="Nombre de la compañía" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="email" name="email_empresa" placeholder="Email empresarial" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                <input type="tel" name="telefono" placeholder="Teléfono" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+
+                <button type="submit"
+                    class="w-full bg-yellow-500 text-black py-2 rounded hover:bg-yellow-400 transition">
+                    Solicitar demo ahora
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- ✅ PLANES PERSEO (Monocromático con logo arriba) -->
     <section id="planes" class="py-1 px-6 bg-gray-100">
         <div class="max-w-6xl mx-auto text-center">
@@ -236,100 +295,10 @@
                 </div>
             </div>
         </div>
+        <br /><br />
     </section>
 
-    <!-- ✅ HERO -->
-    <section class="relative py-20 px-6 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('img/FONDO-SIN-OPACIDAD.webp');">
-        <!-- Capa de opacidad sobre la imagen -->
-        <div class="absolute inset-0 bg-gray-100 opacity-50"></div>
-
-        <!-- Contenido alineado a la izquierda -->
-        <div class="relative z-10 max-w-5xl mx-auto text-left">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black drop-shadow-xl">
-                El Sistema Contable que impulsa tu negocio
-            </h1>
-            <p class="text-lg md:text-xl text-black/90 mb-8 max-w-xl">
-                Controla tus finanzas, ventas y facturación electrónica con PERSEO.
-            </p>
-            <p class="text-lg md:text-xl text-black/90 mb-8 max-w-xl">
-                Más de 7 años en el mercado brindando soluciones contables efectivas.
-            </p>
-            <div class="flex gap-4 flex-wrap">
-                <button onclick="abrirModal()"
-                    class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">
-                    Probar Gratis por 15 días
-                </button>
-                <button onclick="abrirModalDemoAhora()"
-                    class="border border-black text-black px-6 py-3 rounded hover:bg-black hover:text-white transition">
-                    Solicita una Demo
-                </button>
-
-            </div>
-        </div>
-    </section>
-    <!-- MODAL DE REGISTRO -->
-    <div id="modal-demo" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-lg relative">
-            <!-- Botón de cierre -->
-            <button onclick="cerrarModal()"
-                class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
-
-            <!-- Contenido del modal -->
-            <h2 class="text-2xl font-bold mb-2 text-center">¡Estás a pocos pasos de tener tu software!</h2>
-            <p class="text-sm text-gray-600 text-center mb-6">Regístrate y nos contactaremos contigo</p>
-
-            <form action="https://tudominio.com/solicitar-demo" method="POST" class="space-y-4">
-                <input type="text" name="nombre" placeholder="Nombres y apellidos" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                <input type="email" name="correo" placeholder="Correo electrónico" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                <input type="text" name="empresa" placeholder="Nombre de la compañía" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                <input type="email" name="email_empresa" placeholder="Email empresarial" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                <input type="tel" name="telefono" placeholder="Teléfono" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-
-                <button type="submit"
-                    class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Solicitar
-                    Demo</button>
-            </form>
-        </div>
-    </div>
-    <!-- MODAL PARA SOLICITAR UNA DEMO AHORA -->
-    <div id="modal-demo-ahora"
-        class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-lg relative">
-            <!-- Botón de cierre -->
-            <button onclick="cerrarModalDemoAhora()"
-                class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl font-bold">&times;</button>
-
-            <!-- Contenido del modal -->
-            <h2 class="text-2xl font-bold mb-2 text-center">Solicita una demo ahora</h2>
-            <p class="text-sm text-gray-600 text-center mb-6">Completa tus datos y nos contactaremos contigo</p>
-
-            <form action="https://tudominio.com/solicitar-demo" method="POST" class="space-y-4">
-                <input type="text" name="nombre" placeholder="Nombres y apellidos" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                <input type="email" name="correo" placeholder="Correo electrónico" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                <input type="text" name="empresa" placeholder="Nombre de la compañía" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                <input type="email" name="email_empresa" placeholder="Email empresarial" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                <input type="tel" name="telefono" placeholder="Teléfono" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-
-                <button type="submit"
-                    class="w-full bg-yellow-500 text-black py-2 rounded hover:bg-yellow-400 transition">
-                    Solicitar demo ahora
-                </button>
-            </form>
-        </div>
-    </div>
-
-
+    
     <!-- ✅ ESTADÍSTICAS + GRÁFICO DE VENTAS -->
     <!-- Sección con 3 contadores circulares animados -->
     <section class="bg-gray-900 text-white py-20">

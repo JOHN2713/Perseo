@@ -272,7 +272,12 @@
     <!-- ✅ NAV -->
     <header id="main-header" class="sticky top-0 z-50 bg-black text-white shadow-md transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold">PERSEO</div>
+            <div class="h-12">
+                <img src="img/LOGOS-BANNER-PERSEO-BLANCO.png" alt="PERSEO"
+                    class="h-full transition-opacity duration-300" id="logo-white">
+                <img src="img/LOGOS-BANNER-PERSEO-NEGRO.png" alt="PERSEO"
+                    class="h-full transition-opacity duration-300 hidden" id="logo-black">
+            </div>
 
             <!-- ÍCONO HAMBURGUESA -->
             <button id="menu-toggle" class="md:hidden focus:outline-none">
@@ -713,8 +718,8 @@
 
                 <!-- Imagen al lado izquierdo -->
                 <div class="flex justify-center">
-                    <img src="img/astronauta-formulario.webp"
-                        alt="Solicita más información" class="max-w-full rounded-lg shadow-lg">
+                    <img src="img/astronauta-formulario.webp" alt="Solicita más información"
+                        class="max-w-full rounded-lg shadow-lg">
                 </div>
 
                 <!-- Formulario al lado derecho -->
@@ -1760,8 +1765,8 @@
 
                 <!-- Imagen al lado izquierdo -->
                 <div class="flex justify-center">
-                    <img src="img/astronauta-formulario.webp"
-                        alt="Solicita más información" class="max-w-full rounded-lg shadow-lg">
+                    <img src="img/astronauta-formulario.webp" alt="Solicita más información"
+                        class="max-w-full rounded-lg shadow-lg">
                 </div>
 
                 <!-- Formulario al lado derecho -->
@@ -2733,8 +2738,8 @@
 
                 <!-- Imagen al lado izquierdo -->
                 <div class="flex justify-center">
-                    <img src="img/astronauta-formulario.webp"
-                        alt="Solicita más información" class="max-w-full rounded-lg shadow-lg">
+                    <img src="img/astronauta-formulario.webp" alt="Solicita más información"
+                        class="max-w-full rounded-lg shadow-lg">
                 </div>
 
                 <!-- Formulario al lado derecho -->
@@ -2800,21 +2805,26 @@
         document.addEventListener("DOMContentLoaded", function () {
             const header = document.getElementById("main-header");
             const mobileMenu = document.getElementById("mobile-menu");
+            const logoWhite = document.getElementById("logo-white");
+            const logoBlack = document.getElementById("logo-black");
 
             window.addEventListener("scroll", () => {
                 const scrolled = window.scrollY > 50;
 
-                // HEADER
+                // HEADER PRINCIPAL
                 header.classList.toggle("backdrop-blur-lg", scrolled);
                 header.classList.toggle("bg-white", scrolled);
                 header.classList.toggle("text-black", scrolled);
                 header.classList.toggle("border-b", scrolled);
-                header.classList.toggle("border-white/10", scrolled);
-
+                header.classList.toggle("border-white/50", scrolled);
                 header.classList.toggle("bg-black", !scrolled);
                 header.classList.toggle("text-white", !scrolled);
 
-                // MOBILE MENU
+                // LOGOS
+                logoWhite.classList.toggle("hidden", scrolled);
+                logoBlack.classList.toggle("hidden", !scrolled);
+
+                // MENÚ MÓVIL
                 if (mobileMenu) {
                     mobileMenu.classList.toggle("bg-white", scrolled);
                     mobileMenu.classList.toggle("text-black", scrolled);
@@ -2822,14 +2832,6 @@
                     mobileMenu.classList.toggle("text-white", !scrolled);
                 }
             });
-
-            // Menú hamburguesa toggle
-            const toggleBtn = document.getElementById("menu-toggle");
-            if (toggleBtn && mobileMenu) {
-                toggleBtn.addEventListener("click", () => {
-                    mobileMenu.classList.toggle("hidden");
-                });
-            }
         });
     </script>
     <script>
